@@ -8,7 +8,7 @@
 
 #import "RGLoginViewController.h"
 #import "RGNetworkManager.h"
-#import "NSString+SHA.h"
+#import "NSString+RGCrypto.h"
 
 @interface RGLoginViewController ()
 @property(weak, nonatomic) IBOutlet UITextField *loginNameTextField;

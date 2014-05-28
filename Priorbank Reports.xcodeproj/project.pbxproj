@@ -19,7 +19,7 @@
 		FE15FD5D193673CE000CBB71 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE15FD5C193673CE000CBB71 /* QuartzCore.framework */; };
 		FE15FD6F19367BEA000CBB71 /* RGNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE15FD6E19367BEA000CBB71 /* RGNetworkManager.m */; };
 		FE15FD7319367C11000CBB71 /* RGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE15FD7219367C11000CBB71 /* RGLoginViewController.m */; };
-		FE15FD7719368A48000CBB71 /* NSString+SHA.m in Sources */ = {isa = PBXBuildFile; fileRef = FE15FD7619368A48000CBB71 /* NSString+SHA.m */; };
+		FE15FD7719368A48000CBB71 /* NSString+RGCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = FE15FD7619368A48000CBB71 /* NSString+RGCrypto.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,8 +43,8 @@
 		FE15FD6E19367BEA000CBB71 /* RGNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RGNetworkManager.m; path = Network/RGNetworkManager.m; sourceTree = "<group>"; };
 		FE15FD7119367C11000CBB71 /* RGLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGLoginViewController.h; sourceTree = "<group>"; };
 		FE15FD7219367C11000CBB71 /* RGLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGLoginViewController.m; sourceTree = "<group>"; };
-		FE15FD7519368A48000CBB71 /* NSString+SHA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+SHA.h"; path = "Categories/NSString+SHA.h"; sourceTree = "<group>"; };
-		FE15FD7619368A48000CBB71 /* NSString+SHA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+SHA.m"; path = "Categories/NSString+SHA.m"; sourceTree = "<group>"; };
+		FE15FD7519368A48000CBB71 /* NSString+RGCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+RGCrypto.h"; path = "Categories/NSString+RGCrypto.h"; sourceTree = "<group>"; };
+		FE15FD7619368A48000CBB71 /* NSString+RGCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+RGCrypto.m"; path = "Categories/NSString+RGCrypto.m"; sourceTree = "<group>"; };
 		FE15FD7819368A54000CBB71 /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -143,8 +143,8 @@
 		FE15FD7419368A17000CBB71 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				FE15FD7519368A48000CBB71 /* NSString+SHA.h */,
-				FE15FD7619368A48000CBB71 /* NSString+SHA.m */,
+				FE15FD7519368A48000CBB71 /* NSString+RGCrypto.h */,
+				FE15FD7619368A48000CBB71 /* NSString+RGCrypto.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -252,7 +252,7 @@
 			files = (
 				FE15FD3419367334000CBB71 /* main.m in Sources */,
 				FE15FD3819367334000CBB71 /* RGAppDelegate.m in Sources */,
-				FE15FD7719368A48000CBB71 /* NSString+SHA.m in Sources */,
+				FE15FD7719368A48000CBB71 /* NSString+RGCrypto.m in Sources */,
 				FE15FD6F19367BEA000CBB71 /* RGNetworkManager.m in Sources */,
 				FE15FD7319367C11000CBB71 /* RGLoginViewController.m in Sources */,
 			);

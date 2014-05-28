@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Roman Gardukevich. All rights reserved.
 //
 
-@interface NSString (SHA)
+@interface NSString (RGCrypto)
 - (NSString *)sha512;
-
+- (NSString *)encryptByPriorKeys;
 @end

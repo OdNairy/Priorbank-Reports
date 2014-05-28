@@ -7,6 +7,7 @@
 //
 
 #import "RGNetworkManager.h"
+#import "NSString+RGCrypto.h"
 
 static NSTimeInterval kNetworkTimeout = 30;
 static NSString *kServerAPIURL = @"https://www.prior.by/api/";
@@ -72,6 +73,7 @@ NSURLRequest *urlRequestFromURL(NSURL *url) {
 
     NSLog(@"loginName = %@", loginName);
     NSLog(@"passwordHash = %@", passwordHash);
+    NSLog(@"clientToken = %@", [serverToken encryptByPriorKeys]);
 }
 
 
