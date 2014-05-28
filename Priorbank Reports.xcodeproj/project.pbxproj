@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FE15FD2819367334000CBB71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE15FD2719367334000CBB71 /* Foundation.framework */; };
+		FE15FD2A19367334000CBB71 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE15FD2919367334000CBB71 /* CoreGraphics.framework */; };
+		FE15FD2C19367334000CBB71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE15FD2B19367334000CBB71 /* UIKit.framework */; };
+		FE15FD3219367334000CBB71 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE15FD3019367334000CBB71 /* InfoPlist.strings */; };
+		FE15FD3419367334000CBB71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE15FD3319367334000CBB71 /* main.m */; };
+		FE15FD3819367334000CBB71 /* RGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE15FD3719367334000CBB71 /* RGAppDelegate.m */; };
+		FE15FD3B19367334000CBB71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE15FD3919367334000CBB71 /* Main.storyboard */; };
+		FE15FD3E19367334000CBB71 /* RGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE15FD3D19367334000CBB71 /* RGViewController.m */; };
+		FE15FD4019367334000CBB71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE15FD3F19367334000CBB71 /* Images.xcassets */; };
+		FE15FD4719367334000CBB71 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE15FD4619367334000CBB71 /* XCTest.framework */; };
+		FE15FD4819367334000CBB71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE15FD2719367334000CBB71 /* Foundation.framework */; };
+		FE15FD4919367334000CBB71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE15FD2B19367334000CBB71 /* UIKit.framework */; };
+		FE15FD5119367334000CBB71 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE15FD4F19367334000CBB71 /* InfoPlist.strings */; };
+		FE15FD5319367334000CBB71 /* Priorbank_ReportsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE15FD5219367334000CBB71 /* Priorbank_ReportsTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE15FD4A19367334000CBB71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE15FD1C19367334000CBB71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE15FD2319367334000CBB71;
+			remoteInfo = "Priorbank Reports";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FE15FD2419367334000CBB71 /* Priorbank Reports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Priorbank Reports.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE15FD2719367334000CBB71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FE15FD2919367334000CBB71 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FE15FD2B19367334000CBB71 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FE15FD2F19367334000CBB71 /* Priorbank Reports-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Priorbank Reports-Info.plist"; sourceTree = "<group>"; };
+		FE15FD3119367334000CBB71 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FE15FD3319367334000CBB71 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FE15FD3519367334000CBB71 /* Priorbank Reports-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Priorbank Reports-Prefix.pch"; sourceTree = "<group>"; };
+		FE15FD3619367334000CBB71 /* RGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RGAppDelegate.h; sourceTree = "<group>"; };
+		FE15FD3719367334000CBB71 /* RGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RGAppDelegate.m; sourceTree = "<group>"; };
+		FE15FD3A19367334000CBB71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FE15FD3C19367334000CBB71 /* RGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RGViewController.h; sourceTree = "<group>"; };
+		FE15FD3D19367334000CBB71 /* RGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RGViewController.m; sourceTree = "<group>"; };
+		FE15FD3F19367334000CBB71 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FE15FD4519367334000CBB71 /* Priorbank ReportsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Priorbank ReportsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE15FD4619367334000CBB71 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		FE15FD4E19367334000CBB71 /* Priorbank ReportsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Priorbank ReportsTests-Info.plist"; sourceTree = "<group>"; };
+		FE15FD5019367334000CBB71 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FE15FD5219367334000CBB71 /* Priorbank_ReportsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Priorbank_ReportsTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE15FD2119367334000CBB71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE15FD2A19367334000CBB71 /* CoreGraphics.framework in Frameworks */,
+				FE15FD2C19367334000CBB71 /* UIKit.framework in Frameworks */,
+				FE15FD2819367334000CBB71 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE15FD4219367334000CBB71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE15FD4719367334000CBB71 /* XCTest.framework in Frameworks */,
+				FE15FD4919367334000CBB71 /* UIKit.framework in Frameworks */,
+				FE15FD4819367334000CBB71 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FE15FD1B19367334000CBB71 = {
+			isa = PBXGroup;
+			children = (
+				FE15FD2D19367334000CBB71 /* Priorbank Reports */,
+				FE15FD4C19367334000CBB71 /* Priorbank ReportsTests */,
+				FE15FD2619367334000CBB71 /* Frameworks */,
+				FE15FD2519367334000CBB71 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FE15FD2519367334000CBB71 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE15FD2419367334000CBB71 /* Priorbank Reports.app */,
+				FE15FD4519367334000CBB71 /* Priorbank ReportsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE15FD2619367334000CBB71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE15FD2719367334000CBB71 /* Foundation.framework */,
+				FE15FD2919367334000CBB71 /* CoreGraphics.framework */,
+				FE15FD2B19367334000CBB71 /* UIKit.framework */,
+				FE15FD4619367334000CBB71 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE15FD2D19367334000CBB71 /* Priorbank Reports */ = {
+			isa = PBXGroup;
+			children = (
+				FE15FD3619367334000CBB71 /* RGAppDelegate.h */,
+				FE15FD3719367334000CBB71 /* RGAppDelegate.m */,
+				FE15FD3919367334000CBB71 /* Main.storyboard */,
+				FE15FD3C19367334000CBB71 /* RGViewController.h */,
+				FE15FD3D19367334000CBB71 /* RGViewController.m */,
+				FE15FD3F19367334000CBB71 /* Images.xcassets */,
+				FE15FD2E19367334000CBB71 /* Supporting Files */,
+			);
+			path = "Priorbank Reports";
+			sourceTree = "<group>";
+		};
+		FE15FD2E19367334000CBB71 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE15FD2F19367334000CBB71 /* Priorbank Reports-Info.plist */,
+				FE15FD3019367334000CBB71 /* InfoPlist.strings */,
+				FE15FD3319367334000CBB71 /* main.m */,
+				FE15FD3519367334000CBB71 /* Priorbank Reports-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FE15FD4C19367334000CBB71 /* Priorbank ReportsTests */ = {
+			isa = PBXGroup;
+			children = (
+				FE15FD5219367334000CBB71 /* Priorbank_ReportsTests.m */,
+				FE15FD4D19367334000CBB71 /* Supporting Files */,
+			);
+			path = "Priorbank ReportsTests";
+			sourceTree = "<group>";
+		};
+		FE15FD4D19367334000CBB71 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE15FD4E19367334000CBB71 /* Priorbank ReportsTests-Info.plist */,
+				FE15FD4F19367334000CBB71 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE15FD2319367334000CBB71 /* Priorbank Reports */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE15FD5619367334000CBB71 /* Build configuration list for PBXNativeTarget "Priorbank Reports" */;
+			buildPhases = (
+				FE15FD2019367334000CBB71 /* Sources */,
+				FE15FD2119367334000CBB71 /* Frameworks */,
+				FE15FD2219367334000CBB71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Priorbank Reports";
+			productName = "Priorbank Reports";
+			productReference = FE15FD2419367334000CBB71 /* Priorbank Reports.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FE15FD4419367334000CBB71 /* Priorbank ReportsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE15FD5919367334000CBB71 /* Build configuration list for PBXNativeTarget "Priorbank ReportsTests" */;
+			buildPhases = (
+				FE15FD4119367334000CBB71 /* Sources */,
+				FE15FD4219367334000CBB71 /* Frameworks */,
+				FE15FD4319367334000CBB71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE15FD4B19367334000CBB71 /* PBXTargetDependency */,
+			);
+			name = "Priorbank ReportsTests";
+			productName = "Priorbank ReportsTests";
+			productReference = FE15FD4519367334000CBB71 /* Priorbank ReportsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE15FD1C19367334000CBB71 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RG;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Roman Gardukevich";
+				TargetAttributes = {
+					FE15FD4419367334000CBB71 = {
+						TestTargetID = FE15FD2319367334000CBB71;
+					};
+				};
+			};
+			buildConfigurationList = FE15FD1F19367334000CBB71 /* Build configuration list for PBXProject "Priorbank Reports" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FE15FD1B19367334000CBB71;
+			productRefGroup = FE15FD2519367334000CBB71 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE15FD2319367334000CBB71 /* Priorbank Reports */,
+				FE15FD4419367334000CBB71 /* Priorbank ReportsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE15FD2219367334000CBB71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE15FD4019367334000CBB71 /* Images.xcassets in Resources */,
+				FE15FD3219367334000CBB71 /* InfoPlist.strings in Resources */,
+				FE15FD3B19367334000CBB71 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE15FD4319367334000CBB71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE15FD5119367334000CBB71 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE15FD2019367334000CBB71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE15FD3419367334000CBB71 /* main.m in Sources */,
+				FE15FD3819367334000CBB71 /* RGAppDelegate.m in Sources */,
+				FE15FD3E19367334000CBB71 /* RGViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE15FD4119367334000CBB71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE15FD5319367334000CBB71 /* Priorbank_ReportsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FE15FD4B19367334000CBB71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE15FD2319367334000CBB71 /* Priorbank Reports */;
+			targetProxy = FE15FD4A19367334000CBB71 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FE15FD3019367334000CBB71 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE15FD3119367334000CBB71 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FE15FD3919367334000CBB71 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE15FD3A19367334000CBB71 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FE15FD4F19367334000CBB71 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE15FD5019367334000CBB71 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FE15FD5419367334000CBB71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FE15FD5519367334000CBB71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE15FD5719367334000CBB71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Priorbank Reports/Priorbank Reports-Prefix.pch";
+				INFOPLIST_FILE = "Priorbank Reports/Priorbank Reports-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FE15FD5819367334000CBB71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Priorbank Reports/Priorbank Reports-Prefix.pch";
+				INFOPLIST_FILE = "Priorbank Reports/Priorbank Reports-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FE15FD5A19367334000CBB71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Priorbank Reports.app/Priorbank Reports";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Priorbank Reports/Priorbank Reports-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Priorbank ReportsTests/Priorbank ReportsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		FE15FD5B19367334000CBB71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Priorbank Reports.app/Priorbank Reports";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Priorbank Reports/Priorbank Reports-Prefix.pch";
+				INFOPLIST_FILE = "Priorbank ReportsTests/Priorbank ReportsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE15FD1F19367334000CBB71 /* Build configuration list for PBXProject "Priorbank Reports" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE15FD5419367334000CBB71 /* Debug */,
+				FE15FD5519367334000CBB71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE15FD5619367334000CBB71 /* Build configuration list for PBXNativeTarget "Priorbank Reports" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE15FD5719367334000CBB71 /* Debug */,
+				FE15FD5819367334000CBB71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FE15FD5919367334000CBB71 /* Build configuration list for PBXNativeTarget "Priorbank ReportsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE15FD5A19367334000CBB71 /* Debug */,
+				FE15FD5B19367334000CBB71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE15FD1C19367334000CBB71 /* Project object */;
+}
