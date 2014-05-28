@@ -42,9 +42,9 @@
     [[RGNetworkManager sharedManager] initialSetupForServerToken:^(NSString *serverToken, NSError *er) {
         NSLog(@"ServerToken: %@", serverToken);
 
-        [[RGNetworkManager sharedManager] signinWithLoginName:loginName
-                                                 passwordHash:[password sha512]
-                                                  serverToken:serverToken];
+        [[RGNetworkManager sharedManager] signinWithLoginName:loginName passwordHash:[password sha512] serverToken:serverToken completionBlock:^(NSData *data, NSError *error) {
+
+        }];
     }];
 }
 

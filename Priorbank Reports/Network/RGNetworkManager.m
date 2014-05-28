@@ -57,23 +57,35 @@ NSURLRequest *urlRequestFromURL(NSURL *url) {
     [NSURLConnection sendAsynchronousRequest:urlRequest
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        if (connectionError) {
-            block(nil, connectionError);
-        } else {
-            NSString *serverToken = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            block(serverToken, connectionError);
-        }
+        NSString *serverToken = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        block(serverToken, connectionError);
     }];
 }
 
-- (void)signinWithLoginName:(NSString *)loginName passwordHash:(NSString *)passwordHash serverToken:(NSString *)serverToken {
+- (void)signinWithLoginName:(NSString *)loginName passwordHash:(NSString *)passwordHash serverToken:(NSString *)serverToken completionBlock:(void (^)(NSData *, NSError *))completionBlock {
     NSAssert(loginName.length > 0, @"loginName parameter shouldn't be empty string");
     NSAssert(passwordHash.length > 0, @"passwordHash parameter shouldn't be empty string");
     NSAssert(serverToken.length > 0, @"serverToken parameter shouldn't be empty string");
 
-    NSLog(@"loginName = %@", loginName);
-    NSLog(@"passwordHash = %@", passwordHash);
-    NSLog(@"clientToken = %@", [serverToken encryptByPriorKeys]);
+    NSString *clientToken = [serverToken encryptByPriorKeys];
+    NSString *body = [NSString stringWithFormat:@"&UserName=%@&UserPassword=%@&Token=%@", loginName, passwordHash,
+                                                clientToken];
+
+    NSURL *url = actionURL(@"login");
+    NSMutableURLRequest *urlRequest = [urlRequestFromURL(url) mutableCopy];
+    [urlRequest setHTTPMethod:@"POST"];
+    [urlRequest setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
+
+    [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (completionBlock) {
+            completionBlock(data, connectionError);
+        }
+
+    }];
+
+//    NSLog(@"loginName = %@", loginName);
+//    NSLog(@"passwordHash = %@", passwordHash);
+//    NSLog(@"clientToken = %@", clientToken);
 }
 
 

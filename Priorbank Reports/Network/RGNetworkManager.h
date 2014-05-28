@@ -12,6 +12,5 @@
 + (instancetype)sharedManager;
 
 - (void)initialSetupForServerToken:(void (^)(NSString *serverToken, NSError *er))block;
-- (void)signinWithLoginName:(NSString *)loginName passwordHash:(NSString *)passwordHash serverToken:(NSString *)
-        serverToken;
+- (void)signinWithLoginName:(NSString *)loginName passwordHash:(NSString *)passwordHash serverToken:(NSString *)serverToken completionBlock:(void (^)(NSData *, NSError *))completionBlock;
 @end
