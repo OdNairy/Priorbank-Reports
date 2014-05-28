@@ -43,6 +43,7 @@
                     <connections>
                         <outlet property="loginNameTextField" destination="Yeh-91-KrY" id="bj2-z4-A3u"/>
                         <outlet property="passwordTextField" destination="jYD-1D-usB" id="pTH-LL-rp3"/>
+                        <outlet property="signInButton" destination="2qK-S9-2L5" id="8Ks-0V-7qw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
