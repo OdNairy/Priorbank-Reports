@@ -70,7 +70,8 @@ NSURLRequest *urlRequestFromURL(NSURL *url) {
     NSAssert(passwordHash.length > 0, @"passwordHash parameter shouldn't be empty string");
     NSAssert(serverToken.length > 0, @"serverToken parameter shouldn't be empty string");
 
-
+    NSLog(@"loginName = %@", loginName);
+    NSLog(@"passwordHash = %@", passwordHash);
 }
 
 

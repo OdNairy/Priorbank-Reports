@@ -8,6 +8,7 @@
 
 #import "RGLoginViewController.h"
 #import "RGNetworkManager.h"
+#import "NSString+SHA.h"
 
 @interface RGLoginViewController ()
 @property(weak, nonatomic) IBOutlet UITextField *loginNameTextField;
@@ -42,7 +43,7 @@
         NSLog(@"ServerToken: %@", serverToken);
 
         [[RGNetworkManager sharedManager] signinWithLoginName:loginName
-                                                 passwordHash:password
+                                                 passwordHash:[password sha512]
                                                   serverToken:serverToken];
     }];
 }
