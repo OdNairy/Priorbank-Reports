@@ -65,5 +65,13 @@ NSURLRequest *urlRequestFromURL(NSURL *url) {
     }];
 }
 
+- (void)signinWithLoginName:(NSString *)loginName passwordHash:(NSString *)passwordHash serverToken:(NSString *)serverToken {
+    NSAssert(loginName.length > 0, @"loginName parameter shouldn't be empty string");
+    NSAssert(passwordHash.length > 0, @"passwordHash parameter shouldn't be empty string");
+    NSAssert(serverToken.length > 0, @"serverToken parameter shouldn't be empty string");
+
+
+}
+
 
 @end

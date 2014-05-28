@@ -29,8 +29,21 @@
 }
 
 - (IBAction)signInButtonTapped {
+    __weak __typeof(self) myself = self;
+    NSString *loginName = myself.loginNameTextField.text;
+    NSString *password = myself.passwordTextField.text;
+
+    if (!loginName.length || !password.length) {
+        // TODO: alert not-input params
+        return;
+    }
+
     [[RGNetworkManager sharedManager] initialSetupForServerToken:^(NSString *serverToken, NSError *er) {
         NSLog(@"ServerToken: %@", serverToken);
+
+        [[RGNetworkManager sharedManager] signinWithLoginName:loginName
+                                                 passwordHash:password
+                                                  serverToken:serverToken];
     }];
 }
 
