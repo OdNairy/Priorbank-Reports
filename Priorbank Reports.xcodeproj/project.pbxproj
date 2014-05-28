@@ -15,23 +15,10 @@
 		FE15FD3419367334000CBB71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE15FD3319367334000CBB71 /* main.m */; };
 		FE15FD3819367334000CBB71 /* RGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE15FD3719367334000CBB71 /* RGAppDelegate.m */; };
 		FE15FD3B19367334000CBB71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE15FD3919367334000CBB71 /* Main.storyboard */; };
-		FE15FD3E19367334000CBB71 /* RGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE15FD3D19367334000CBB71 /* RGViewController.m */; };
+		FE15FD3E19367334000CBB71 /* RGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE15FD3D19367334000CBB71 /* RGLoginViewController.m */; };
 		FE15FD4019367334000CBB71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE15FD3F19367334000CBB71 /* Images.xcassets */; };
-		FE15FD4719367334000CBB71 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE15FD4619367334000CBB71 /* XCTest.framework */; };
-		FE15FD4819367334000CBB71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE15FD2719367334000CBB71 /* Foundation.framework */; };
-		FE15FD4919367334000CBB71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE15FD2B19367334000CBB71 /* UIKit.framework */; };
 		FE15FD5D193673CE000CBB71 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE15FD5C193673CE000CBB71 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		FE15FD4A19367334000CBB71 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FE15FD1C19367334000CBB71 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FE15FD2319367334000CBB71;
-			remoteInfo = "Priorbank Reports";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1E9EAF9D4F744927A48D51B6 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -47,10 +34,9 @@
 		FE15FD3619367334000CBB71 /* RGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RGAppDelegate.h; sourceTree = "<group>"; };
 		FE15FD3719367334000CBB71 /* RGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RGAppDelegate.m; sourceTree = "<group>"; };
 		FE15FD3A19367334000CBB71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FE15FD3C19367334000CBB71 /* RGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RGViewController.h; sourceTree = "<group>"; };
-		FE15FD3D19367334000CBB71 /* RGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RGViewController.m; sourceTree = "<group>"; };
+		FE15FD3C19367334000CBB71 /* RGLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RGLoginViewController.h; sourceTree = "<group>"; };
+		FE15FD3D19367334000CBB71 /* RGLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RGLoginViewController.m; sourceTree = "<group>"; };
 		FE15FD3F19367334000CBB71 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		FE15FD4519367334000CBB71 /* Priorbank ReportsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Priorbank ReportsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE15FD4619367334000CBB71 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FE15FD5C193673CE000CBB71 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -65,16 +51,6 @@
 				FE15FD2C19367334000CBB71 /* UIKit.framework in Frameworks */,
 				FE15FD2819367334000CBB71 /* Foundation.framework in Frameworks */,
 				59ACD43D058A4074B2EBEEB3 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FE15FD4219367334000CBB71 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FE15FD4719367334000CBB71 /* XCTest.framework in Frameworks */,
-				FE15FD4919367334000CBB71 /* UIKit.framework in Frameworks */,
-				FE15FD4819367334000CBB71 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				FE15FD2419367334000CBB71 /* Priorbank Reports.app */,
-				FE15FD4519367334000CBB71 /* Priorbank ReportsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,8 +94,8 @@
 				FE15FD3619367334000CBB71 /* RGAppDelegate.h */,
 				FE15FD3719367334000CBB71 /* RGAppDelegate.m */,
 				FE15FD3919367334000CBB71 /* Main.storyboard */,
-				FE15FD3C19367334000CBB71 /* RGViewController.h */,
-				FE15FD3D19367334000CBB71 /* RGViewController.m */,
+				FE15FD3C19367334000CBB71 /* RGLoginViewController.h */,
+				FE15FD3D19367334000CBB71 /* RGLoginViewController.m */,
 				FE15FD3F19367334000CBB71 /* Images.xcassets */,
 				FE15FD2E19367334000CBB71 /* Supporting Files */,
 			);
@@ -160,24 +135,6 @@
 			productReference = FE15FD2419367334000CBB71 /* Priorbank Reports.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FE15FD4419367334000CBB71 /* Priorbank ReportsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FE15FD5919367334000CBB71 /* Build configuration list for PBXNativeTarget "Priorbank ReportsTests" */;
-			buildPhases = (
-				FE15FD4119367334000CBB71 /* Sources */,
-				FE15FD4219367334000CBB71 /* Frameworks */,
-				FE15FD4319367334000CBB71 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FE15FD4B19367334000CBB71 /* PBXTargetDependency */,
-			);
-			name = "Priorbank ReportsTests";
-			productName = "Priorbank ReportsTests";
-			productReference = FE15FD4519367334000CBB71 /* Priorbank ReportsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -187,11 +144,6 @@
 				CLASSPREFIX = RG;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Roman Gardukevich";
-				TargetAttributes = {
-					FE15FD4419367334000CBB71 = {
-						TestTargetID = FE15FD2319367334000CBB71;
-					};
-				};
 			};
 			buildConfigurationList = FE15FD1F19367334000CBB71 /* Build configuration list for PBXProject "Priorbank Reports" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -207,7 +159,6 @@
 			projectRoot = "";
 			targets = (
 				FE15FD2319367334000CBB71 /* Priorbank Reports */,
-				FE15FD4419367334000CBB71 /* Priorbank ReportsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -220,13 +171,6 @@
 				FE15FD4019367334000CBB71 /* Images.xcassets in Resources */,
 				FE15FD3219367334000CBB71 /* InfoPlist.strings in Resources */,
 				FE15FD3B19367334000CBB71 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FE15FD4319367334000CBB71 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,26 +216,11 @@
 			files = (
 				FE15FD3419367334000CBB71 /* main.m in Sources */,
 				FE15FD3819367334000CBB71 /* RGAppDelegate.m in Sources */,
-				FE15FD3E19367334000CBB71 /* RGViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FE15FD4119367334000CBB71 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				FE15FD3E19367334000CBB71 /* RGLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FE15FD4B19367334000CBB71 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FE15FD2319367334000CBB71 /* Priorbank Reports */;
-			targetProxy = FE15FD4A19367334000CBB71 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FE15FD3019367334000CBB71 /* InfoPlist.strings */ = {
@@ -345,7 +274,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -377,7 +306,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -413,46 +342,6 @@
 			};
 			name = Release;
 		};
-		FE15FD5A19367334000CBB71 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Priorbank Reports.app/Priorbank Reports";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Priorbank Reports/Priorbank Reports-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Priorbank ReportsTests/Priorbank ReportsTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		FE15FD5B19367334000CBB71 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Priorbank Reports.app/Priorbank Reports";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Priorbank Reports/Priorbank Reports-Prefix.pch";
-				INFOPLIST_FILE = "Priorbank ReportsTests/Priorbank ReportsTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -470,15 +359,6 @@
 			buildConfigurations = (
 				FE15FD5719367334000CBB71 /* Debug */,
 				FE15FD5819367334000CBB71 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FE15FD5919367334000CBB71 /* Build configuration list for PBXNativeTarget "Priorbank ReportsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FE15FD5A19367334000CBB71 /* Debug */,
-				FE15FD5B19367334000CBB71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
