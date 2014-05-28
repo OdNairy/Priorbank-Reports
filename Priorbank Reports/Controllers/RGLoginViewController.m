@@ -7,6 +7,7 @@
 //
 
 #import "RGLoginViewController.h"
+#import "RGNetworkManager.h"
 
 @interface RGLoginViewController ()
 @property(weak, nonatomic) IBOutlet UITextField *loginNameTextField;
@@ -25,12 +26,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initializeControls];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)signInButtonTapped {
+    [[RGNetworkManager sharedManager] initialSetupForServerToken:^(NSString *serverToken, NSError *er) {
+        NSLog(@"ServerToken: %@", serverToken);
+    }];
 }
+
 
 @end

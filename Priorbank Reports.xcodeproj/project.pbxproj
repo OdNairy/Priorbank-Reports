@@ -15,9 +15,10 @@
 		FE15FD3419367334000CBB71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE15FD3319367334000CBB71 /* main.m */; };
 		FE15FD3819367334000CBB71 /* RGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE15FD3719367334000CBB71 /* RGAppDelegate.m */; };
 		FE15FD3B19367334000CBB71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE15FD3919367334000CBB71 /* Main.storyboard */; };
-		FE15FD3E19367334000CBB71 /* RGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE15FD3D19367334000CBB71 /* RGLoginViewController.m */; };
 		FE15FD4019367334000CBB71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE15FD3F19367334000CBB71 /* Images.xcassets */; };
 		FE15FD5D193673CE000CBB71 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE15FD5C193673CE000CBB71 /* QuartzCore.framework */; };
+		FE15FD6F19367BEA000CBB71 /* RGNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE15FD6E19367BEA000CBB71 /* RGNetworkManager.m */; };
+		FE15FD7319367C11000CBB71 /* RGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE15FD7219367C11000CBB71 /* RGLoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,11 +35,13 @@
 		FE15FD3619367334000CBB71 /* RGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RGAppDelegate.h; sourceTree = "<group>"; };
 		FE15FD3719367334000CBB71 /* RGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RGAppDelegate.m; sourceTree = "<group>"; };
 		FE15FD3A19367334000CBB71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FE15FD3C19367334000CBB71 /* RGLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RGLoginViewController.h; sourceTree = "<group>"; };
-		FE15FD3D19367334000CBB71 /* RGLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RGLoginViewController.m; sourceTree = "<group>"; };
 		FE15FD3F19367334000CBB71 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FE15FD4619367334000CBB71 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FE15FD5C193673CE000CBB71 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FE15FD6D19367BEA000CBB71 /* RGNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RGNetworkManager.h; path = Network/RGNetworkManager.h; sourceTree = "<group>"; };
+		FE15FD6E19367BEA000CBB71 /* RGNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RGNetworkManager.m; path = Network/RGNetworkManager.m; sourceTree = "<group>"; };
+		FE15FD7119367C11000CBB71 /* RGLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGLoginViewController.h; sourceTree = "<group>"; };
+		FE15FD7219367C11000CBB71 /* RGLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGLoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,11 +94,11 @@
 		FE15FD2D19367334000CBB71 /* Priorbank Reports */ = {
 			isa = PBXGroup;
 			children = (
+				FE15FD6C19367BB1000CBB71 /* Network */,
+				FE15FD7019367C11000CBB71 /* Controllers */,
 				FE15FD3619367334000CBB71 /* RGAppDelegate.h */,
 				FE15FD3719367334000CBB71 /* RGAppDelegate.m */,
 				FE15FD3919367334000CBB71 /* Main.storyboard */,
-				FE15FD3C19367334000CBB71 /* RGLoginViewController.h */,
-				FE15FD3D19367334000CBB71 /* RGLoginViewController.m */,
 				FE15FD3F19367334000CBB71 /* Images.xcassets */,
 				FE15FD2E19367334000CBB71 /* Supporting Files */,
 			);
@@ -111,6 +114,24 @@
 				FE15FD3519367334000CBB71 /* Priorbank Reports-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FE15FD6C19367BB1000CBB71 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FE15FD6D19367BEA000CBB71 /* RGNetworkManager.h */,
+				FE15FD6E19367BEA000CBB71 /* RGNetworkManager.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		FE15FD7019367C11000CBB71 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE15FD7119367C11000CBB71 /* RGLoginViewController.h */,
+				FE15FD7219367C11000CBB71 /* RGLoginViewController.m */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,7 +237,8 @@
 			files = (
 				FE15FD3419367334000CBB71 /* main.m in Sources */,
 				FE15FD3819367334000CBB71 /* RGAppDelegate.m in Sources */,
-				FE15FD3E19367334000CBB71 /* RGLoginViewController.m in Sources */,
+				FE15FD6F19367BEA000CBB71 /* RGNetworkManager.m in Sources */,
+				FE15FD7319367C11000CBB71 /* RGLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
