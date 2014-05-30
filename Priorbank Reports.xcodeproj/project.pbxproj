@@ -20,6 +20,9 @@
 		FE15FD6F19367BEA000CBB71 /* RGNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE15FD6E19367BEA000CBB71 /* RGNetworkManager.m */; };
 		FE15FD7319367C11000CBB71 /* RGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE15FD7219367C11000CBB71 /* RGLoginViewController.m */; };
 		FE15FD7719368A48000CBB71 /* NSString+RGCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = FE15FD7619368A48000CBB71 /* NSString+RGCrypto.m */; };
+		FE24EEC219384FE900BD6125 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = FE24EEC119384FE900BD6125 /* XMLReader.m */; };
+		FE24EEC51938520500BD6125 /* NSDictionary+NormalizeCyrillic.m in Sources */ = {isa = PBXBuildFile; fileRef = FE24EEC41938520500BD6125 /* NSDictionary+NormalizeCyrillic.m */; };
+		FE24EEC9193920D600BD6125 /* RGAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = FE24EEC8193920D600BD6125 /* RGAuthorization.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,12 @@
 		FE15FD7519368A48000CBB71 /* NSString+RGCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+RGCrypto.h"; path = "Categories/NSString+RGCrypto.h"; sourceTree = "<group>"; };
 		FE15FD7619368A48000CBB71 /* NSString+RGCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+RGCrypto.m"; path = "Categories/NSString+RGCrypto.m"; sourceTree = "<group>"; };
 		FE15FD7819368A54000CBB71 /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
+		FE24EEC019384FE900BD6125 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
+		FE24EEC119384FE900BD6125 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
+		FE24EEC31938520500BD6125 /* NSDictionary+NormalizeCyrillic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+NormalizeCyrillic.h"; path = "Categories/NSDictionary+NormalizeCyrillic.h"; sourceTree = "<group>"; };
+		FE24EEC41938520500BD6125 /* NSDictionary+NormalizeCyrillic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+NormalizeCyrillic.m"; path = "Categories/NSDictionary+NormalizeCyrillic.m"; sourceTree = "<group>"; };
+		FE24EEC7193920D600BD6125 /* RGAuthorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RGAuthorization.h; path = Entities/RGAuthorization.h; sourceTree = "<group>"; };
+		FE24EEC8193920D600BD6125 /* RGAuthorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RGAuthorization.m; path = Entities/RGAuthorization.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +108,9 @@
 		FE15FD2D19367334000CBB71 /* Priorbank Reports */ = {
 			isa = PBXGroup;
 			children = (
+				FE24EEC6193920B500BD6125 /* Entities */,
 				FE15FD7419368A17000CBB71 /* Categories */,
+				FE24EEBF19384FE900BD6125 /* External */,
 				FE15FD6C19367BB1000CBB71 /* Network */,
 				FE15FD7019367C11000CBB71 /* Controllers */,
 				FE15FD3619367334000CBB71 /* RGAppDelegate.h */,
@@ -143,10 +154,30 @@
 		FE15FD7419368A17000CBB71 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				FE24EEC31938520500BD6125 /* NSDictionary+NormalizeCyrillic.h */,
+				FE24EEC41938520500BD6125 /* NSDictionary+NormalizeCyrillic.m */,
 				FE15FD7519368A48000CBB71 /* NSString+RGCrypto.h */,
 				FE15FD7619368A48000CBB71 /* NSString+RGCrypto.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		FE24EEBF19384FE900BD6125 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				FE24EEC019384FE900BD6125 /* XMLReader.h */,
+				FE24EEC119384FE900BD6125 /* XMLReader.m */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		FE24EEC6193920B500BD6125 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FE24EEC7193920D600BD6125 /* RGAuthorization.h */,
+				FE24EEC8193920D600BD6125 /* RGAuthorization.m */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,7 +284,10 @@
 				FE15FD3419367334000CBB71 /* main.m in Sources */,
 				FE15FD3819367334000CBB71 /* RGAppDelegate.m in Sources */,
 				FE15FD7719368A48000CBB71 /* NSString+RGCrypto.m in Sources */,
+				FE24EEC51938520500BD6125 /* NSDictionary+NormalizeCyrillic.m in Sources */,
 				FE15FD6F19367BEA000CBB71 /* RGNetworkManager.m in Sources */,
+				FE24EEC219384FE900BD6125 /* XMLReader.m in Sources */,
+				FE24EEC9193920D600BD6125 /* RGAuthorization.m in Sources */,
 				FE15FD7319367C11000CBB71 /* RGLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
