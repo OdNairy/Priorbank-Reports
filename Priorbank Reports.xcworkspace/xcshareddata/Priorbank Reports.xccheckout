@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>83A81905-C973-4515-B735-208FC09E35BE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Priorbank Reports</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4FA3E5B6-BAF5-4EEF-82B6-72202729A34F</key>
+		<string>ssh://github.com/OdNairy/Priorbank-Reports.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Priorbank Reports.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4FA3E5B6-BAF5-4EEF-82B6-72202729A34F</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/OdNairy/Priorbank-Reports.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4FA3E5B6-BAF5-4EEF-82B6-72202729A34F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4FA3E5B6-BAF5-4EEF-82B6-72202729A34F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Priorbank Reports</string>
+		</dict>
+	</array>
+</dict>
+</plist>
