@@ -51,7 +51,10 @@
 
         [[RGNetworkManager sharedManager] signinWithLoginName:loginName passwordHash:[password sha512] serverToken:serverToken completionBlock:^(NSData *data, NSError *error) {
             RGAuthorization* authorization = [RGAuthorization authorizationWithData:data];
-            
+            [[RGNetworkManager sharedManager] cardList:^(NSData *data, NSError *error) {
+                NSString* s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                NSLog(@"s: %@",s);
+            }];
         }];
     }];
 }

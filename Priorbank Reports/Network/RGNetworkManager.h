@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^RGResponseBlock)(NSData*, NSError*);
+
 @interface RGNetworkManager : NSObject
 + (instancetype)sharedManager;
 
 - (void)initialSetupForServerToken:(void (^)(NSString *serverToken, NSError *er))block;
 - (void)signinWithLoginName:(NSString *)loginName passwordHash:(NSString *)passwordHash serverToken:(NSString *)serverToken completionBlock:(void (^)(NSData *, NSError *))completionBlock;
+
+- (void)cardList:(RGResponseBlock)completionBlock;
 @end

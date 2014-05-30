@@ -26,6 +26,9 @@ NSURLRequest *urlRequestFromURL(NSURL *url) {
                                                                 cachePolicy:NSURLRequestReloadIgnoringCacheData
                                                             timeoutInterval:kNetworkTimeout];
     [request setValue:@"Priorbank client/1.1" forHTTPHeaderField:@"User-Agent"];
+    if ([url.absoluteString isEqualToString:[actionURL(@"GateWay") absoluteString]]) {
+        [request setValue:@"XML" forHTTPHeaderField:@"Base64Fields"];
+    }
     return request;
 }
 
@@ -63,9 +66,9 @@ NSURLRequest *urlRequestFromURL(NSURL *url) {
 }
 
 - (void)signinWithLoginName:(NSString *)loginName passwordHash:(NSString *)passwordHash serverToken:(NSString *)serverToken completionBlock:(void (^)(NSData *, NSError *))completionBlock {
-    NSAssert(loginName.length > 0, @"loginName parameter shouldn't be empty string");
-    NSAssert(passwordHash.length > 0, @"passwordHash parameter shouldn't be empty string");
-    NSAssert(serverToken.length > 0, @"serverToken parameter shouldn't be empty string");
+    NSParameterAssert(loginName.length > 0);
+    NSParameterAssert(passwordHash.length > 0);
+    NSParameterAssert(serverToken.length > 0);
 
     NSString *clientToken = [serverToken encryptByPriorKeys];
     NSString *body = [NSString stringWithFormat:@"&UserName=%@&UserPassword=%@&Token=%@", loginName, passwordHash,
@@ -86,6 +89,20 @@ NSURLRequest *urlRequestFromURL(NSURL *url) {
 //    NSLog(@"loginName = %@", loginName);
 //    NSLog(@"passwordHash = %@", passwordHash);
 //    NSLog(@"clientToken = %@", clientToken);
+}
+
+- (void)cardList:(RGResponseBlock)completionBlock{
+    NSParameterAssert(completionBlock);
+    
+    NSMutableURLRequest* urlRequest = [urlRequestFromURL(actionURL(@"GateWay")) mutableCopy];
+    [urlRequest setHTTPMethod:@"POST"];
+    [urlRequest setHTTPBody:[@"Template=CardList" dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (completionBlock) {
+            completionBlock(data, connectionError);
+        }
+    }];
 }
 
 

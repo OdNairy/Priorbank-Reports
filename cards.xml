@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Result>
+  <Cards>
+    <Card id="114">
+      <Synonym>DK4677</Synonym>
+      <Type>6</Type>
+      <CardNum>4677</CardNum>
+      <OperType>2</OperType>
+      <Description>Номер карточки ...4677, VISA ELECTRON BYR</Description>
+      <ExternalID>2905890</ExternalID>
+      <Corp>2</Corp>
+      <CorpName>Некорпоративная</CorpName>
+      <Currency>BYR</Currency>
+      <CardType>VISA ELECTRON</CardType>
+      <CustomSynonym>1. Основная</CustomSynonym>
+      <IsStCashCard>0</IsStCashCard>
+      <BALANCE>
+        <CARD_ID>2905890</CARD_ID>
+        <AMOUNT_AVAILABLE>20183</AMOUNT_AVAILABLE>
+        <CONTRACT_CURR>BYR</CONTRACT_CURR>
+        <CARD_NUMBER>4667</CARD_NUMBER>
+        <CARD_EXPIRE>28.02.2015</CARD_EXPIRE>
+        <CARD_STATUS>действительна</CARD_STATUS>
+        <CARD_STATUS_CODE>14</CARD_STATUS_CODE>
+        <PROD_TYPE>D</PROD_TYPE>
+        <PROD_NUM/>
+        <SUM>0</SUM>
+        <TOTAL_SUM>0</TOTAL_SUM>
+      </BALANCE>
+    </Card>
+    <Card id="61884268">
+      <Synonym>DK8844</Synonym>
+      <Type>6</Type>
+      <CardNum>8844</CardNum>
+      <OperType>2</OperType>
+      <Description>Номер карточки ...8844, VISA ELECTRON USD</Description>
+      <ExternalID>11803232</ExternalID>
+      <Corp>2</Corp>
+      <CorpName>Некорпоративная</CorpName>
+      <Currency>USD</Currency>
+      <CardType>VISA ELECTRON</CardType>
+      <CustomSynonym>2. Валютная</CustomSynonym>
+      <IsStCashCard>0</IsStCashCard>
+      <BALANCE>
+        <CARD_ID>11803232</CARD_ID>
+        <AMOUNT_AVAILABLE>272.22</AMOUNT_AVAILABLE>
+        <CONTRACT_CURR>USD</CONTRACT_CURR>
+        <CARD_NUMBER>8833</CARD_NUMBER>
+        <CARD_EXPIRE>31.08.2014</CARD_EXPIRE>
+        <CARD_STATUS>действительна</CARD_STATUS>
+        <CARD_STATUS_CODE>14</CARD_STATUS_CODE>
+        <PROD_TYPE>D</PROD_TYPE>
+        <PROD_NUM/>
+        <SUM>0</SUM>
+        <TOTAL_SUM>0</TOTAL_SUM>
+      </BALANCE>
+    </Card>
+    <Card id="30130212">
+      <Synonym>KK8973</Synonym>
+      <Type>5</Type>
+      <CardNum>8973</CardNum>
+      <OperType>2</OperType>
+      <Description>Номер карточки ...8973, VISA ELECTRON BYR</Description>
+      <ExternalID>7026274</ExternalID>
+      <Corp>2</Corp>
+      <CorpName>Некорпоративная</CorpName>
+      <Currency>BYR</Currency>
+      <CardType>VISA ELECTRON</CardType>
+      <CustomSynonym>3. Кредитная</CustomSynonym>
+      <IsStCashCard>1</IsStCashCard>
+      <BALANCE>
+        <CARD_ID>7026274</CARD_ID>
+        <AMOUNT_AVAILABLE>3536568</AMOUNT_AVAILABLE>
+        <CONTRACT_CURR>BYR</CONTRACT_CURR>
+        <CARD_NUMBER>8973</CARD_NUMBER>
+        <CARD_EXPIRE>31.08.2014</CARD_EXPIRE>
+        <CARD_STATUS>действительна</CARD_STATUS>
+        <CARD_STATUS_CODE>14</CARD_STATUS_CODE>
+        <PROD_TYPE>C</PROD_TYPE>
+        <PROD_NUM>4011</PROD_NUM>
+        <SUM>0</SUM>
+        <TOTAL_SUM>4463432</TOTAL_SUM>
+      </BALANCE>
+    </Card>
+  </Cards>
+  <PltCards>
+    <Card id="114">
+      <Synonym>DK4677</Synonym>
+      <Type>6</Type>
+      <CardNum>4677</CardNum>
+      <OperType>2</OperType>
+      <Description>Номер карточки ...4677, VISA ELECTRON BYR</Description>
+      <ExternalID>2905890</ExternalID>
+      <Currency>BYR</Currency>
+      <CustomSynonym>1. Основная</CustomSynonym>
+      <CardType>VISA ELECTRON</CardType>
+      <IsStCashCard>0</IsStCashCard>
+      <BALANCE>
+        <CARD_ID>2905890</CARD_ID>
+        <AMOUNT_AVAILABLE>20183</AMOUNT_AVAILABLE>
+        <CONTRACT_CURR>BYR</CONTRACT_CURR>
+        <CARD_NUMBER>4667</CARD_NUMBER>
+        <CARD_EXPIRE>28.02.2015</CARD_EXPIRE>
+        <CARD_STATUS>действительна</CARD_STATUS>
+        <CARD_STATUS_CODE>14</CARD_STATUS_CODE>
+        <PROD_TYPE>D</PROD_TYPE>
+        <PROD_NUM/>
+        <SUM>0</SUM>
+        <TOTAL_SUM>0</TOTAL_SUM>
+      </BALANCE>
+    </Card>
+    <Card id="61884268">
+      <Synonym>DK8844</Synonym>
+      <Type>6</Type>
+      <CardNum>8844</CardNum>
+      <OperType>2</OperType>
+      <Description>Номер карточки ...8844, VISA ELECTRON USD</Description>
+      <ExternalID>11803232</ExternalID>
+      <Currency>USD</Currency>
+      <CustomSynonym>2. Валютная</CustomSynonym>
+      <CardType>VISA ELECTRON</CardType>
+      <IsStCashCard>0</IsStCashCard>
+      <BALANCE>
+        <CARD_ID>11803232</CARD_ID>
+        <AMOUNT_AVAILABLE>272.22</AMOUNT_AVAILABLE>
+        <CONTRACT_CURR>USD</CONTRACT_CURR>
+        <CARD_NUMBER>8833</CARD_NUMBER>
+        <CARD_EXPIRE>31.08.2014</CARD_EXPIRE>
+        <CARD_STATUS>действительна</CARD_STATUS>
+        <CARD_STATUS_CODE>14</CARD_STATUS_CODE>
+        <PROD_TYPE>D</PROD_TYPE>
+        <PROD_NUM/>
+        <SUM>0</SUM>
+        <TOTAL_SUM>0</TOTAL_SUM>
+      </BALANCE>
+    </Card>
+    <Card id="30130212">
+      <Synonym>KK8973</Synonym>
+      <Type>5</Type>
+      <CardNum>8973</CardNum>
+      <OperType>2</OperType>
+      <Description>Номер карточки ...8973, VISA ELECTRON BYR</Description>
+      <ExternalID>7026274</ExternalID>
+      <Currency>BYR</Currency>
+      <CustomSynonym>3. Кредитная</CustomSynonym>
+      <CardType>VISA ELECTRON</CardType>
+      <IsStCashCard>1</IsStCashCard>
+      <BALANCE>
+        <CARD_ID>7026274</CARD_ID>
+        <AMOUNT_AVAILABLE>3536568</AMOUNT_AVAILABLE>
+        <CONTRACT_CURR>BYR</CONTRACT_CURR>
+        <CARD_NUMBER>8973</CARD_NUMBER>
+        <CARD_EXPIRE>31.08.2014</CARD_EXPIRE>
+        <CARD_STATUS>действительна</CARD_STATUS>
+        <CARD_STATUS_CODE>14</CARD_STATUS_CODE>
+        <PROD_TYPE>C</PROD_TYPE>
+        <PROD_NUM>4011</PROD_NUM>
+        <SUM>0</SUM>
+        <TOTAL_SUM>4463432</TOTAL_SUM>
+      </BALANCE>
+    </Card>
+  </PltCards>
+</Result>
