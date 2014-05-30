@@ -29,4 +29,5 @@
 @property (nonatomic, assign,getter = isStCashCard) BOOL stCashCard;
 
 @property (nonatomic, strong) RGBalance* balance;
+-(instancetype)initWithAttributes:(NSDictionary*)attributes;
 @end

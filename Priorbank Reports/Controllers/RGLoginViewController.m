@@ -11,6 +11,7 @@
 #import "NSString+RGCrypto.h"
 #import "XMLReader.h"
 #import "RGAuthorization.h"
+#import "RGCardsList.h"
 
 @interface RGLoginViewController ()
 @property(weak, nonatomic) IBOutlet UITextField *loginNameTextField;
@@ -52,8 +53,9 @@
         [[RGNetworkManager sharedManager] signinWithLoginName:loginName passwordHash:[password sha512] serverToken:serverToken completionBlock:^(NSData *data, NSError *error) {
             RGAuthorization* authorization = [RGAuthorization authorizationWithData:data];
             [[RGNetworkManager sharedManager] cardList:^(NSData *data, NSError *error) {
-                NSString* s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                NSLog(@"s: %@",s);
+                RGCardsList* cardList = [RGCardsList cardListWithData:data];
+//                NSString* s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//                NSLog(@"s: %@",s);
             }];
         }];
     }];

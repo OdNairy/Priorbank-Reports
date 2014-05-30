@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface RGCardsList : NSObject
-@property (nonatomic, strong) NSArray* cards;
-@property (nonatomic, strong) NSArray* pltCards;    // ?? Credit cards ??
+@property (nonatomic, strong, readonly) NSMutableArray* cards;
+@property (nonatomic, strong, readonly) NSMutableArray* pltCards;    // ?? Credit cards ??
++(instancetype)cardListWithData:(NSData*)data;
 @end

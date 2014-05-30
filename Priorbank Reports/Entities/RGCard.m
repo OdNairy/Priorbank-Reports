@@ -9,5 +9,12 @@
 #import "RGCard.h"
 
 @implementation RGCard
-
+-(instancetype)initWithAttributes:(NSDictionary *)attributes{
+    self = [super init];
+    if (self) {
+        NSString* idAttribute = attributes[@"id"];
+        self.cardIdentifier = idAttribute;
+    }
+    return self;
+}
 @end
