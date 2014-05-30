@@ -24,6 +24,8 @@
 		FE24EEC51938520500BD6125 /* NSDictionary+NormalizeCyrillic.m in Sources */ = {isa = PBXBuildFile; fileRef = FE24EEC41938520500BD6125 /* NSDictionary+NormalizeCyrillic.m */; };
 		FE24EEC9193920D600BD6125 /* RGAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = FE24EEC8193920D600BD6125 /* RGAuthorization.m */; };
 		FE24EECC19392A8300BD6125 /* RGCardsList.m in Sources */ = {isa = PBXBuildFile; fileRef = FE24EECB19392A8300BD6125 /* RGCardsList.m */; };
+		FE24EECF19392B2700BD6125 /* RGCard.m in Sources */ = {isa = PBXBuildFile; fileRef = FE24EECE19392B2700BD6125 /* RGCard.m */; };
+		FE24EED219392CF200BD6125 /* RGBalance.m in Sources */ = {isa = PBXBuildFile; fileRef = FE24EED119392CF200BD6125 /* RGBalance.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,10 @@
 		FE24EEC8193920D600BD6125 /* RGAuthorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RGAuthorization.m; path = Entities/RGAuthorization.m; sourceTree = "<group>"; };
 		FE24EECA19392A8300BD6125 /* RGCardsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RGCardsList.h; path = Entities/RGCardsList.h; sourceTree = "<group>"; };
 		FE24EECB19392A8300BD6125 /* RGCardsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RGCardsList.m; path = Entities/RGCardsList.m; sourceTree = "<group>"; };
+		FE24EECD19392B2700BD6125 /* RGCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RGCard.h; path = Entities/RGCard.h; sourceTree = "<group>"; };
+		FE24EECE19392B2700BD6125 /* RGCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RGCard.m; path = Entities/RGCard.m; sourceTree = "<group>"; };
+		FE24EED019392CF200BD6125 /* RGBalance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RGBalance.h; path = Entities/RGBalance.h; sourceTree = "<group>"; };
+		FE24EED119392CF200BD6125 /* RGBalance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RGBalance.m; path = Entities/RGBalance.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +187,10 @@
 				FE24EEC8193920D600BD6125 /* RGAuthorization.m */,
 				FE24EECA19392A8300BD6125 /* RGCardsList.h */,
 				FE24EECB19392A8300BD6125 /* RGCardsList.m */,
+				FE24EECD19392B2700BD6125 /* RGCard.h */,
+				FE24EECE19392B2700BD6125 /* RGCard.m */,
+				FE24EED019392CF200BD6125 /* RGBalance.h */,
+				FE24EED119392CF200BD6125 /* RGBalance.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -286,6 +296,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE24EED219392CF200BD6125 /* RGBalance.m in Sources */,
+				FE24EECF19392B2700BD6125 /* RGCard.m in Sources */,
 				FE15FD3419367334000CBB71 /* main.m in Sources */,
 				FE15FD3819367334000CBB71 /* RGAppDelegate.m in Sources */,
 				FE15FD7719368A48000CBB71 /* NSString+RGCrypto.m in Sources */,
