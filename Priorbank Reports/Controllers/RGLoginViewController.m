@@ -12,11 +12,16 @@
 #import "XMLReader.h"
 #import "RGAuthorization.h"
 #import "RGCardsList.h"
+#import "RGCardsListController.h"
+
+static NSString* kPushCardsList = @"OpenCardsList";
 
 @interface RGLoginViewController ()
 @property(weak, nonatomic) IBOutlet UITextField *loginNameTextField;
 @property(weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property(weak, nonatomic) IBOutlet UIButton *signInButton;
+
+@property (nonatomic, strong) RGCardsList* cardsList;
 @end
 
 @implementation RGLoginViewController
@@ -47,18 +52,27 @@
         return;
     }
 
+    __weak __typeof(self) weakSelf = self;
     [[RGNetworkManager sharedManager] initialSetupForServerToken:^(NSString *serverToken, NSError *er) {
         NSLog(@"ServerToken: %@", serverToken);
 
         [[RGNetworkManager sharedManager] signinWithLoginName:loginName passwordHash:[password sha512] serverToken:serverToken completionBlock:^(NSData *data, NSError *error) {
             RGAuthorization* authorization = [RGAuthorization authorizationWithData:data];
             [[RGNetworkManager sharedManager] cardList:^(NSData *data, NSError *error) {
-                RGCardsList* cardList = [RGCardsList cardListWithData:data];
+                self.cardsList = [RGCardsList cardListWithData:data];
+                [weakSelf performSegueWithIdentifier:kPushCardsList sender:weakSelf];
 //                NSString* s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 //                NSLog(@"s: %@",s);
             }];
         }];
     }];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:kPushCardsList]) {
+        RGCardsListController* cardsListController = segue.destinationViewController;
+        cardsListController.cardsList = self.cardsList;
+    }
 }
 
 

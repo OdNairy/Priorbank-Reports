@@ -10,21 +10,13 @@
 #import "RGCardsList.h"
 #import "RGCard.h"
 #import "RGBalance.h"
+#import "RGCardInListCell.h"
 
 @interface RGCardsListController ()
 
 @end
 
 @implementation RGCardsListController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -36,39 +28,58 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden = YES;
+}
+
+-(void)setCardsList:(RGCardsList *)cardsList{
+    _cardsList = cardsList;
+    [self.tableView reloadData];
+}
+
+-(NSArray*)cardsArrayForSection:(NSInteger)section{
+    if (section == 0) {
+        return self.cardsList.cards;
+    }else if (section == 1){
+        return self.cardsList.pltCards;
+    }
+    return nil;
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [[self cardsArrayForSection:section] count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    RGCardInListCell *cell = (RGCardInListCell*)[tableView dequeueReusableCellWithIdentifier:@"CardCell"];
     
-    // Configure the cell...
+    RGCard* card = [self cardsArrayForSection:indexPath.section][indexPath.row];
+    
+    cell.descriptionLabel.text = card.description;
     
     return cell;
 }
-*/
+
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return @[@"Cards",@"PltCards"][section];
+}
 
 /*
 // Override to support conditional editing of the table view.

@@ -48,7 +48,7 @@
                         <outlet property="loginNameTextField" destination="Yeh-91-KrY" id="bj2-z4-A3u"/>
                         <outlet property="passwordTextField" destination="jYD-1D-usB" id="pTH-LL-rp3"/>
                         <outlet property="signInButton" destination="2qK-S9-2L5" id="8Ks-0V-7qw"/>
-                        <segue destination="gfn-gf-Wxj" kind="push" id="rnf-V1-eTq"/>
+                        <segue destination="gfn-gf-Wxj" kind="push" identifier="OpenCardsList" id="rnf-V1-eTq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -71,8 +71,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w29-sA-xA7">
-                                            <rect key="frame" x="20" y="8" width="280" height="36"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="w29-sA-xA7">
+                                            <rect key="frame" x="20" y="8" width="280" height="56"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

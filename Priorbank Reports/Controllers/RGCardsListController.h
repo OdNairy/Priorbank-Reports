@@ -10,5 +10,5 @@
 
 @class RGCardsList;
 @interface RGCardsListController : UITableViewController
-
+@property (nonatomic, strong) RGCardsList* cardsList;
 @end
