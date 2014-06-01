@@ -34,6 +34,11 @@ NSMutableURLRequest *urlRequestFromURL(NSURL *url) {
     return request;
 }
 
+NSString* urlEncodedValue(NSString* str){
+        NSString *result = (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)str, NULL, CFSTR(":/?#[]@!$&’()*+,;="), kCFStringEncodingUTF8);
+        return result;
+}
+
 @implementation RGNetworkManager
 + (instancetype)sharedManager {
     static dispatch_once_t onceToken;
@@ -72,7 +77,7 @@ NSMutableURLRequest *urlRequestFromURL(NSURL *url) {
     NSParameterAssert(passwordHash.length > 0);
     NSParameterAssert(serverToken.length > 0);
 
-    NSString *clientToken = [serverToken encryptByPriorKeys];
+    NSString *clientToken = urlEncodedValue([serverToken encryptByPriorKeys]);
     NSString *body = [NSString stringWithFormat:@"&UserName=%@&UserPassword=%@&Token=%@", loginName, passwordHash,
                                                 clientToken];
 

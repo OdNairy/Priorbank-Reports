@@ -8,6 +8,7 @@
 
 #import "RGCardTransactionsController.h"
 #import "RGTransaction.h"
+#import "RGCard.h"
 
 @interface RGCardTransactionsController ()
 
@@ -18,7 +19,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -26,8 +26,22 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+-(void)updateTitle{
+    self.title = self.card.userSynonym.length?self.card.userSynonym:self.card.synonym;
+}
+
+- (IBAction)resortTapped:(UIBarButtonItem *)sender {
+    self.transactions = [[self.transactions reverseObjectEnumerator] allObjects];
+    [self.tableView reloadData];
+}
+
+-(void)setCard:(RGCard *)card{
+    _card = card;
+    [self updateTitle];
+}
+
 -(void)setTransactions:(NSArray *)transactions{
-    _transactions = transactions;
+    _transactions = [[transactions reverseObjectEnumerator] allObjects];
     [self.tableView reloadData];
 }
 
