@@ -8,6 +8,8 @@
 
 #import "RGNetworkManager.h"
 #import "NSString+RGCrypto.h"
+#import "RXMLElement.h"
+#import "RGTransaction.h"
 
 static NSTimeInterval kNetworkTimeout = 30;
 static NSString *kServerAPIURL = @"https://www.prior.by/api/";
@@ -128,6 +130,13 @@ NSMutableURLRequest *urlRequestFromURL(NSURL *url) {
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"s: %@",string);
+        NSMutableArray * transactions = [NSMutableArray array];
+                               
+        RXMLElement *rxmlElement = [RXMLElement elementFromXMLData:data];
+        [rxmlElement iterate:@"CONTRACT.ACCOUNT.TRANS_CARD.TRANSACTION" usingBlock:^(RXMLElement *transactionXMLElement) {
+            [transactions addObject:[RGTransaction transactionWithXMLElement:transactionXMLElement]];
+        }];
+
         if (completionBlock) {
             completionBlock(data,connectionError);
         }
