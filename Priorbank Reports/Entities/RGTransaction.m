@@ -41,6 +41,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         dateFormatter = [[NSDateFormatter alloc]init];
+        [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
     });
     return dateFormatter;
 }
@@ -54,9 +55,10 @@
 
 +(NSDate*)dateTimeFromTransactionDateString:(NSString*)dateString timeString:(NSString*)timeString{
     NSDateFormatter* dateFormatter = [RGTransaction sharedDateFormatter];
-    [dateFormatter setDateFormat:@"hh:mm:ss dd.MM.yyyy"];
+    [dateFormatter setDateFormat:@"HH:mm:ss dd.MM.yyyy"];
     
-    return [dateFormatter dateFromString:[NSString stringWithFormat:@"%@ %@",timeString,dateString]];
+    NSString* dateTimeString = [NSString stringWithFormat:@"%@ %@",timeString,dateString];
+    return [dateFormatter dateFromString:dateTimeString];
 }
 
 @end
