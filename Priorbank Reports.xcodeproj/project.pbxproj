@@ -28,6 +28,7 @@
 		FE24EED219392CF200BD6125 /* RGBalance.m in Sources */ = {isa = PBXBuildFile; fileRef = FE24EED119392CF200BD6125 /* RGBalance.m */; };
 		FE24EED51939AA0500BD6125 /* RGCardsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE24EED41939AA0500BD6125 /* RGCardsListController.m */; };
 		FE24EEDA1939AA8C00BD6125 /* RGCardInListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE24EED91939AA8C00BD6125 /* RGCardInListCell.m */; };
+		FE36874A193B4A87009D4B55 /* RGCardTransactionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE368749193B4A87009D4B55 /* RGCardTransactionsController.m */; };
 		FE51C6FE193B3F28005DE552 /* RGTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = FE51C6FD193B3F28005DE552 /* RGTransaction.m */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,8 @@
 		FE24EED41939AA0500BD6125 /* RGCardsListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGCardsListController.m; sourceTree = "<group>"; };
 		FE24EED81939AA8C00BD6125 /* RGCardInListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RGCardInListCell.h; path = Views/Cells/RGCardInListCell.h; sourceTree = "<group>"; };
 		FE24EED91939AA8C00BD6125 /* RGCardInListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RGCardInListCell.m; path = Views/Cells/RGCardInListCell.m; sourceTree = "<group>"; };
+		FE368748193B4A87009D4B55 /* RGCardTransactionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGCardTransactionsController.h; sourceTree = "<group>"; };
+		FE368749193B4A87009D4B55 /* RGCardTransactionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGCardTransactionsController.m; sourceTree = "<group>"; };
 		FE51C6FC193B3F28005DE552 /* RGTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RGTransaction.h; path = Entities/RGTransaction.h; sourceTree = "<group>"; };
 		FE51C6FD193B3F28005DE552 /* RGTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RGTransaction.m; path = Entities/RGTransaction.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,6 +171,8 @@
 				FE15FD7219367C11000CBB71 /* RGLoginViewController.m */,
 				FE24EED31939AA0500BD6125 /* RGCardsListController.h */,
 				FE24EED41939AA0500BD6125 /* RGCardsListController.m */,
+				FE368748193B4A87009D4B55 /* RGCardTransactionsController.h */,
+				FE368749193B4A87009D4B55 /* RGCardTransactionsController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -333,6 +338,7 @@
 				FE24EEDA1939AA8C00BD6125 /* RGCardInListCell.m in Sources */,
 				FE15FD3419367334000CBB71 /* main.m in Sources */,
 				FE15FD3819367334000CBB71 /* RGAppDelegate.m in Sources */,
+				FE36874A193B4A87009D4B55 /* RGCardTransactionsController.m in Sources */,
 				FE15FD7719368A48000CBB71 /* NSString+RGCrypto.m in Sources */,
 				FE24EECC19392A8300BD6125 /* RGCardsList.m in Sources */,
 				FE24EEC51938520500BD6125 /* NSDictionary+NormalizeCyrillic.m in Sources */,

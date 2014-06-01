@@ -107,7 +107,7 @@ NSMutableURLRequest *urlRequestFromURL(NSURL *url) {
     }];
 }
 
-- (void)transactionsForCardId:(NSString *)cardId from:(NSDate *)fromDate to:(NSDate *)toDate completionBlock:(void (^)(NSData *data, NSError *error))completionBlock {
+- (void)transactionsForCardId:(NSString *)cardId from:(NSDate *)fromDate to:(NSDate *)toDate completionBlock:(void (^)(NSArray *transactions, NSError *error))completionBlock {
     NSParameterAssert([fromDate compare:toDate] == NSOrderedAscending);
     NSParameterAssert(cardId);
 
@@ -138,7 +138,7 @@ NSMutableURLRequest *urlRequestFromURL(NSURL *url) {
         }];
 
         if (completionBlock) {
-            completionBlock(data,connectionError);
+            completionBlock(transactions,connectionError);
         }
     }];
 }

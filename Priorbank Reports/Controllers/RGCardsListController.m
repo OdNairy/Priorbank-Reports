@@ -12,6 +12,7 @@
 #import "RGBalance.h"
 #import "RGCardInListCell.h"
 #import "RGNetworkManager.h"
+#import "RGCardTransactionsController.h"
 
 static NSString* kOpenCardSegue = @"OpenCard";
 
@@ -24,10 +25,10 @@ static NSString* kOpenCardSegue = @"OpenCard";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
-    
+
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -38,7 +39,9 @@ static NSString* kOpenCardSegue = @"OpenCard";
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    self.navigationController.navigationBarHidden = YES;
+    if ([self isMovingFromParentViewController]) {
+        self.navigationController.navigationBarHidden = YES;
+    }
 }
 
 -(void)setCardsList:(RGCardsList *)cardsList{
@@ -72,11 +75,11 @@ static NSString* kOpenCardSegue = @"OpenCard";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     RGCardInListCell *cell = (RGCardInListCell*)[tableView dequeueReusableCellWithIdentifier:@"CardCell"];
-    
+
     RGCard* card = [self cardsArrayForSection:indexPath.section][indexPath.row];
-    
+
     cell.descriptionLabel.text = card.description;
-    
+
     return cell;
 }
 
@@ -88,9 +91,14 @@ static NSString* kOpenCardSegue = @"OpenCard";
     components.month = -3;
     NSDate *fromDate = [(NSCalendar *)[NSCalendar currentCalendar] dateByAddingComponents:components
                                                                                    toDate:[NSDate date] options:0];
-
-    [[RGNetworkManager sharedManager] transactionsForCardId:card.cardIdentifier from:fromDate to:[[NSDate alloc] initWithTimeIntervalSinceNow:0] completionBlock:^(NSData *data, NSError *error) {
-
+    __weak __typeof(self) weakSelf = self;
+    [[RGNetworkManager sharedManager] transactionsForCardId:card.cardIdentifier from:fromDate to:[[NSDate alloc] initWithTimeIntervalSinceNow:0] completionBlock:^(NSArray *transactions, NSError *error) {
+        if (!error) {
+            RGCardTransactionsController* transactionsController = [weakSelf.storyboard instantiateViewControllerWithIdentifier:@"RGCardTransactionsController"];
+            transactionsController.transactions = transactions;
+            transactionsController.card = card;
+            [weakSelf.navigationController pushViewController:transactionsController animated:YES];
+        }
     }];
 }
 

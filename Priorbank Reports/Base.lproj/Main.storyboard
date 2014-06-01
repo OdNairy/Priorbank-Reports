@@ -92,31 +92,57 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="2iO-hY-A3q"/>
                     <connections>
-                        <segue destination="p1L-0R-29Q" kind="push" identifier="OpenCard" id="P9j-hg-QXK"/>
+                        <segue destination="dE2-IL-iae" kind="push" identifier="OpenCard" id="Xw3-Ur-Dt2"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sf4-5d-1V0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1135" y="-67"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="WFM-Bn-P2b">
+        <!--Card Transactions Controller-->
+        <scene sceneID="c7i-HA-SEI">
             <objects>
-                <viewController id="p1L-0R-29Q" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Rem-I3-jLA"/>
-                        <viewControllerLayoutGuide type="bottom" id="WaJ-LM-UGW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2MS-Sp-wLo">
+                <tableViewController storyboardIdentifier="RGCardTransactionsController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dE2-IL-iae" customClass="RGCardTransactionsController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" sectionHeaderHeight="22" sectionFooterHeight="22" id="wGH-Yo-hvH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Cau-40-kr9"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OSY-rF-nSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TransactionCell" textLabel="Rlx-hw-rYo" detailTextLabel="3q4-NZ-sS9" rowHeight="58" style="IBUITableViewCellStyleSubtitle" id="jAV-Ny-I9H">
+                                <rect key="frame" x="0.0" y="22" width="320" height="58"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jAV-Ny-I9H" id="FQu-Uy-xon">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rlx-hw-rYo">
+                                            <rect key="frame" x="15" y="10" width="34" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3q4-NZ-sS9">
+                                            <rect key="frame" x="15" y="32" width="43" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dE2-IL-iae" id="hCB-d2-wpS"/>
+                            <outlet property="delegate" destination="dE2-IL-iae" id="EOj-tp-y3T"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="uwr-Zr-6fS"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XP3-3w-X5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1589" y="-67"/>
+            <point key="canvasLocation" x="1608" y="-70"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oIH-BZ-rbq">
