@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RGXMLEntityProtocol.h"
+#import "RGObject.h"
 
-@interface RGAuthorization : NSObject
+@interface RGAuthorization : RGObject<RGXMLEntityProtocol>
 +(instancetype)authorizationWithData:(NSData*)data;
 @end

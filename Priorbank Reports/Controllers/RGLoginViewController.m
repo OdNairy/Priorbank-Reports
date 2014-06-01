@@ -57,13 +57,17 @@ static NSString* kPushCardsList = @"OpenCardsList";
         NSLog(@"ServerToken: %@", serverToken);
 
         [[RGNetworkManager sharedManager] signinWithLoginName:loginName passwordHash:[password sha512] serverToken:serverToken completionBlock:^(NSData *data, NSError *error) {
-            RGAuthorization* authorization = [RGAuthorization authorizationWithData:data];
-            [[RGNetworkManager sharedManager] cardList:^(NSData *data, NSError *error) {
-                self.cardsList = [RGCardsList cardListWithData:data];
-                [weakSelf performSegueWithIdentifier:kPushCardsList sender:weakSelf];
-//                NSString* s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-//                NSLog(@"s: %@",s);
-            }];
+            if (!error) {
+                RGAuthorization* authorization = [RGAuthorization authorizationWithData:data];
+                [[RGNetworkManager sharedManager] cardList:^(NSData *data, NSError *error) {
+                    if (!error) {
+                        self.cardsList = [RGCardsList cardListWithData:data];
+                        [weakSelf performSegueWithIdentifier:kPushCardsList sender:weakSelf];
+                    }
+                    //                NSString* s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                    //                NSLog(@"s: %@",s);
+                }];
+            }
         }];
     }];
 }

@@ -7,8 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RGXMLEntityProtocol.h"
+#import "RGObject.h"
 
-@interface RGCardsList : NSObject
+@class RXMLElement;
+
+@interface RGCardsList : RGObject<RGXMLEntityProtocol>
 @property (nonatomic, strong, readonly) NSMutableArray* cards;
 @property (nonatomic, strong, readonly) NSMutableArray* pltCards;    // ?? Credit cards ??
 +(instancetype)cardListWithData:(NSData*)data;

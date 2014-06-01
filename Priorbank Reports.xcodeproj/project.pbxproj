@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		59ACD43D058A4074B2EBEEB3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFC662ACBF9D4F6C896C72D7 /* libPods.a */; };
+		A0B41B28F6637E7C2859A2E5 /* RXMLElement+ExtendedXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B41D485B12F87F01E4E0D5 /* RXMLElement+ExtendedXMLElement.m */; };
+		A0B41DB108D32BA0D5D00B65 /* RGObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B4131A2C9C2F1FF2BFB644 /* RGObject.m */; };
+		A0B41F8E280C2836E831206F /* RGError.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B41C233AA8C7164D3D8701 /* RGError.m */; };
 		FE15FD2819367334000CBB71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE15FD2719367334000CBB71 /* Foundation.framework */; };
 		FE15FD2A19367334000CBB71 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE15FD2919367334000CBB71 /* CoreGraphics.framework */; };
 		FE15FD2C19367334000CBB71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE15FD2B19367334000CBB71 /* UIKit.framework */; };
@@ -34,6 +37,13 @@
 
 /* Begin PBXFileReference section */
 		1E9EAF9D4F744927A48D51B6 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		A0B4131A2C9C2F1FF2BFB644 /* RGObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RGObject.m; path = Entities/RGObject.m; sourceTree = "<group>"; };
+		A0B4196C30431D38ACE5F7BB /* RXMLElement+ExtendedXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RXMLElement+ExtendedXMLElement.h"; path = "Categories/RXMLElement+ExtendedXMLElement.h"; sourceTree = "<group>"; };
+		A0B41C233AA8C7164D3D8701 /* RGError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RGError.m; path = Entities/RGError.m; sourceTree = "<group>"; };
+		A0B41C5D2556A12B604CDF4C /* RGError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RGError.h; path = Entities/RGError.h; sourceTree = "<group>"; };
+		A0B41C78056030961BA805E8 /* RGXMLEntityProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGXMLEntityProtocol.h; sourceTree = "<group>"; };
+		A0B41D485B12F87F01E4E0D5 /* RXMLElement+ExtendedXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RXMLElement+ExtendedXMLElement.m"; path = "Categories/RXMLElement+ExtendedXMLElement.m"; sourceTree = "<group>"; };
+		A0B41DAC8DE540D3B058D288 /* RGObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RGObject.h; path = Entities/RGObject.h; sourceTree = "<group>"; };
 		AFC662ACBF9D4F6C896C72D7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE15FD2419367334000CBB71 /* Priorbank Reports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Priorbank Reports.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE15FD2719367334000CBB71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -184,6 +194,8 @@
 				FE24EEC41938520500BD6125 /* NSDictionary+NormalizeCyrillic.m */,
 				FE15FD7519368A48000CBB71 /* NSString+RGCrypto.h */,
 				FE15FD7619368A48000CBB71 /* NSString+RGCrypto.m */,
+				A0B41D485B12F87F01E4E0D5 /* RXMLElement+ExtendedXMLElement.m */,
+				A0B4196C30431D38ACE5F7BB /* RXMLElement+ExtendedXMLElement.h */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -210,6 +222,11 @@
 				FE24EED119392CF200BD6125 /* RGBalance.m */,
 				FE51C6FC193B3F28005DE552 /* RGTransaction.h */,
 				FE51C6FD193B3F28005DE552 /* RGTransaction.m */,
+				A0B41C78056030961BA805E8 /* RGXMLEntityProtocol.h */,
+				A0B4131A2C9C2F1FF2BFB644 /* RGObject.m */,
+				A0B41DAC8DE540D3B058D288 /* RGObject.h */,
+				A0B41C5D2556A12B604CDF4C /* RGError.h */,
+				A0B41C233AA8C7164D3D8701 /* RGError.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -347,6 +364,9 @@
 				FE51C6FE193B3F28005DE552 /* RGTransaction.m in Sources */,
 				FE24EEC9193920D600BD6125 /* RGAuthorization.m in Sources */,
 				FE15FD7319367C11000CBB71 /* RGLoginViewController.m in Sources */,
+				A0B41B28F6637E7C2859A2E5 /* RXMLElement+ExtendedXMLElement.m in Sources */,
+				A0B41DB108D32BA0D5D00B65 /* RGObject.m in Sources */,
+				A0B41F8E280C2836E831206F /* RGError.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "RXMLElement.h"
+#import "RGXMLEntityProtocol.h"
+#import "RGObject.h"
 
-@interface RGTransaction : NSObject
+@interface RGTransaction : RGObject<RGXMLEntityProtocol>
 @property (nonatomic, strong) NSDate* postingDate;
 @property (nonatomic, strong) NSDate* transactionDate;
 @property (nonatomic, assign, getter = isNormal) BOOL normal;
@@ -22,4 +24,5 @@
 @property (nonatomic, strong) NSString* description;
 
 +(instancetype)transactionWithXMLElement:(RXMLElement*)element;
++ (NSDate *)dateFromTransactionDateString:(NSString *)dateString;
 @end

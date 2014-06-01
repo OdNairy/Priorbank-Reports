@@ -10,6 +10,7 @@
 #import "NSString+RGCrypto.h"
 #import "RXMLElement.h"
 #import "RGTransaction.h"
+#import "RGError.h"
 
 static NSTimeInterval kNetworkTimeout = 30;
 static NSString *kServerAPIURL = @"https://www.prior.by/api/";
@@ -35,9 +36,51 @@ NSMutableURLRequest *urlRequestFromURL(NSURL *url) {
 }
 
 NSString* urlEncodedValue(NSString* str){
-        NSString *result = (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)str, NULL, CFSTR(":/?#[]@!$&’()*+,;="), kCFStringEncodingUTF8);
+        NSString *result = (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (__bridge CFStringRef)str, NULL, CFSTR(":/?#[]@!$&’()*+,;="), kCFStringEncodingUTF8);
         return result;
 }
+
+@interface NSURLConnection(RGNetwork)
++(void)asynchRequest:(NSURLRequest *)request completion:(void(^)(id data, NSError *error))completion;
+@end
+
+@implementation NSURLConnection(RGNetwork)
++ (void)asynchRequest:(NSURLRequest *)request completion:(void (^)(id, NSError *))completion {
+    NSParameterAssert(request);
+    NSParameterAssert(completion);
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (connectionError) {
+            if (completion) {
+                completion(nil,connectionError);
+            }
+        } else {
+            RXMLElement *element = [RXMLElement elementFromXMLData:data];
+            if (!element) {
+                completion(data,nil);
+                return;
+            }
+            if ([element.tag isEqualToString:@"Error"]) {
+                RGError *error = [RGError entityWithXMLElement:element];
+                NSLog(@"Error: %@",error.message);
+                NSLog(@"URL: %@",response.URL.absoluteString);
+                [[[UIAlertView alloc] initWithTitle:error.title
+                                           message:error.message
+                                          delegate:nil
+                                 cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+
+                if (completion) {
+                    completion(nil,[NSError errorWithDomain:@"NetworkDomain" code:-42 userInfo:@{@"ServerTitle":error.title}]);
+                }
+            } else if (completion) {
+                completion(data,nil);
+            }
+        }
+    }];
+}
+
+@end
 
 @implementation RGNetworkManager
 + (instancetype)sharedManager {
@@ -64,9 +107,7 @@ NSString* urlEncodedValue(NSString* str){
 
     NSURLRequest *urlRequest = urlRequestFromURL(url);
 
-    [NSURLConnection sendAsynchronousRequest:urlRequest
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+    [NSURLConnection sendAsynchronousRequest:urlRequest queue:([NSOperationQueue mainQueue]) completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         NSString *serverToken = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         block(serverToken, connectionError);
     }];
@@ -86,16 +127,11 @@ NSString* urlEncodedValue(NSString* str){
     [urlRequest setHTTPMethod:@"POST"];
     [urlRequest setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
 
-    [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+    [NSURLConnection asynchRequest:urlRequest completion:^(id data, NSError *error) {
         if (completionBlock) {
-            completionBlock(data, connectionError);
+            completionBlock(data, error);
         }
-
     }];
-
-//    NSLog(@"loginName = %@", loginName);
-//    NSLog(@"passwordHash = %@", passwordHash);
-//    NSLog(@"clientToken = %@", clientToken);
 }
 
 - (void)cardList:(RGResponseBlock)completionBlock{
@@ -104,10 +140,10 @@ NSString* urlEncodedValue(NSString* str){
     NSMutableURLRequest* urlRequest = urlRequestFromURL(actionURL(@"GateWay"));
     [urlRequest setHTTPMethod:@"POST"];
     [urlRequest setHTTPBody:[@"Template=CardList" dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+
+    [NSURLConnection asynchRequest:urlRequest completion:^(id data, NSError *error) {
         if (completionBlock) {
-            completionBlock(data, connectionError);
+            completionBlock(data, error);
         }
     }];
 }
@@ -130,20 +166,18 @@ NSString* urlEncodedValue(NSString* str){
 
     NSString *httpBodyString = [NSString stringWithFormat:@"Template=OWS_vpsk&@ObjID=%@&P_DATE_FROM=%@&P_DATE_TO=%@",cardId,fromDateString,toDateString];
     [urlRequest setHTTPBody:[httpBodyString dataUsingEncoding:NSUTF8StringEncoding]];
-    [NSURLConnection sendAsynchronousRequest:urlRequest
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+    [NSURLConnection asynchRequest:urlRequest completion:^(id data, NSError *error) {
         NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"s: %@",string);
         NSMutableArray * transactions = [NSMutableArray array];
-                               
+
         RXMLElement *rxmlElement = [RXMLElement elementFromXMLData:data];
-        [rxmlElement iterate:@"CONTRACT.ACCOUNT.TRANS_CARD.TRANSACTION" usingBlock:^(RXMLElement *transactionXMLElement) {
+        [rxmlElement iterateWithRootXPath:@"//TRANSACTION" usingBlock:^(RXMLElement *transactionXMLElement) {
             [transactions addObject:[RGTransaction transactionWithXMLElement:transactionXMLElement]];
         }];
 
         if (completionBlock) {
-            completionBlock(transactions,connectionError);
+            completionBlock(transactions,error);
         }
     }];
 }

@@ -7,17 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RGXMLEntityProtocol.h"
+#import "RGObject.h"
 
-@interface RGBalance : NSObject
+@interface RGBalance : RGObject<RGXMLEntityProtocol>
 @property (nonatomic, assign) NSString* cardId;
 @property (nonatomic, assign) CGFloat amountAvailable;
 @property (nonatomic, strong) NSString* contractorCurrency;
 @property (nonatomic, assign) NSInteger cardNum;
+@property (nonatomic, strong) NSString *rbsCard;
 
 @property (nonatomic, strong) NSDate* cardExpire;
 @property (nonatomic, strong) NSString* cardStatus;
 @property (nonatomic, assign) NSInteger cardStatusCode;
 @property (nonatomic, strong) NSString* prodType;
+@property(nonatomic, strong) NSString *prodNum;
 
 @property (nonatomic, assign) CGFloat sum;
 @property (nonatomic, assign) CGFloat totalSum;
