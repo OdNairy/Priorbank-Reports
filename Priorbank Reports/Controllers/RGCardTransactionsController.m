@@ -31,7 +31,7 @@
 }
 
 - (IBAction)resortTapped:(UIBarButtonItem *)sender {
-    self.transactions = [[self.transactions reverseObjectEnumerator] allObjects];
+    _transactions = [[self.transactions reverseObjectEnumerator] allObjects];
     [self.tableView reloadData];
 }
 
