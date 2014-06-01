@@ -11,6 +11,9 @@
 #import "RGCard.h"
 #import "RGBalance.h"
 #import "RGCardInListCell.h"
+#import "RGNetworkManager.h"
+
+static NSString* kOpenCardSegue = @"OpenCard";
 
 @interface RGCardsListController ()
 
@@ -77,9 +80,25 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    RGCard* card = [self cardsArrayForSection:indexPath.section][indexPath.row];
+    NSLog(@"Selected card: %@",card.cardIdentifier);
+
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    components.month = -3;
+    NSDate *fromDate = [(NSCalendar *)[NSCalendar currentCalendar] dateByAddingComponents:components
+                                                                                   toDate:[NSDate date] options:0];
+
+    [[RGNetworkManager sharedManager] transactionsForCardId:card.cardIdentifier from:fromDate to:[[NSDate alloc] initWithTimeIntervalSinceNow:0] completionBlock:^(NSData *data, NSError *error) {
+
+    }];
+}
+
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     return @[@"Cards",@"PltCards"][section];
 }
+
+
 
 /*
 // Override to support conditional editing of the table view.

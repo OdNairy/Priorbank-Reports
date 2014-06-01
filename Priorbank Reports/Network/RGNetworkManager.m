@@ -21,7 +21,7 @@ NSURL *actionURL(NSString *action) {
     return [NSURL URLWithString:urlString];
 }
 
-NSURLRequest *urlRequestFromURL(NSURL *url) {
+NSMutableURLRequest *urlRequestFromURL(NSURL *url) {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url
                                                                 cachePolicy:NSURLRequestReloadIgnoringCacheData
                                                             timeoutInterval:kNetworkTimeout];
@@ -94,13 +94,42 @@ NSURLRequest *urlRequestFromURL(NSURL *url) {
 - (void)cardList:(RGResponseBlock)completionBlock{
     NSParameterAssert(completionBlock);
     
-    NSMutableURLRequest* urlRequest = [urlRequestFromURL(actionURL(@"GateWay")) mutableCopy];
+    NSMutableURLRequest* urlRequest = urlRequestFromURL(actionURL(@"GateWay"));
     [urlRequest setHTTPMethod:@"POST"];
     [urlRequest setHTTPBody:[@"Template=CardList" dataUsingEncoding:NSUTF8StringEncoding]];
     
     [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         if (completionBlock) {
             completionBlock(data, connectionError);
+        }
+    }];
+}
+
+- (void)transactionsForCardId:(NSString *)cardId from:(NSDate *)fromDate to:(NSDate *)toDate completionBlock:(void (^)(NSData *data, NSError *error))completionBlock {
+    NSParameterAssert([fromDate compare:toDate] == NSOrderedAscending);
+    NSParameterAssert(cardId);
+
+    NSURL *url = actionURL(@"GateWay");
+    NSMutableURLRequest *urlRequest = urlRequestFromURL(url);
+    [urlRequest setHTTPMethod:@"POST"];
+
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+
+    NSString *fromDateString, *toDateString;
+    fromDateString = [dateFormatter stringFromDate:fromDate];
+    toDateString = [dateFormatter stringFromDate:toDate];
+
+    NSString *httpBodyString = [NSString stringWithFormat:@"Template=OWS_vpsk&@ObjID=%@&P_DATE_FROM=%@&P_DATE_TO=%@",cardId,fromDateString,toDateString];
+    [urlRequest setHTTPBody:[httpBodyString dataUsingEncoding:NSUTF8StringEncoding]];
+    [NSURLConnection sendAsynchronousRequest:urlRequest
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"s: %@",string);
+        if (completionBlock) {
+            completionBlock(data,connectionError);
         }
     }];
 }

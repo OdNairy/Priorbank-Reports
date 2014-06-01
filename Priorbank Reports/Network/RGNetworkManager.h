@@ -17,4 +17,6 @@ typedef void(^RGResponseBlock)(NSData*, NSError*);
 - (void)signinWithLoginName:(NSString *)loginName passwordHash:(NSString *)passwordHash serverToken:(NSString *)serverToken completionBlock:(void (^)(NSData *, NSError *))completionBlock;
 
 - (void)cardList:(RGResponseBlock)completionBlock;
+- (void)transactionsForCardId:(NSString *)cardId from:(NSDate *)fromDate to:(NSDate *)toDate completionBlock:(void (^)(NSData *data, NSError *error))completionBlock;
+
 @end
