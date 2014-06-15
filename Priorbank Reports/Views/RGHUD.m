@@ -15,8 +15,15 @@
         hud.graceTime = gracePeriod;
         hud.taskInProgress = YES;
         hud.animationType = MBProgressHUDAnimationZoomIn;
+        hud.mode = MBProgressHUDModeText;
         [view addSubview:hud];
+        view.userInteractionEnabled = NO;
     }
     return hud;
+}
+
+-(void)hide:(BOOL)animated{
+    self.superview.userInteractionEnabled = YES;
+    [super hide:animated];
 }
 @end

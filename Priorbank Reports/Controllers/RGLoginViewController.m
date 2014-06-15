@@ -39,11 +39,27 @@ static NSString* kPushCardsList = @"OpenCardsList";
 #endif
 }
 
+#pragma mark - Lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initializeControls];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:(UIBarButtonItemStyleDone) target:nil action:nil];
 }
+
+-(NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+-(BOOL)shouldAutorotate{
+    return NO;
+}
+
+-(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+    return UIInterfaceOrientationPortrait;
+}
+
+#pragma mark -
 
 - (IBAction)signInButtonTapped {
     __weak __typeof(self) myself = self;
@@ -58,6 +74,7 @@ static NSString* kPushCardsList = @"OpenCardsList";
     RGHUD* hud = [RGHUD HUDWithGrace:kDefaultGracePeriod inView:self.view];
     hud.labelText = @"Initial setup";
     [hud show:YES];
+    hud.progress = 0;
     
     __weak __typeof(self) weakSelf = self;
     [[RGNetworkManager sharedManager] initialSetupForServerToken:^(NSString *serverToken, NSError *er) {
@@ -67,7 +84,7 @@ static NSString* kPushCardsList = @"OpenCardsList";
         [[RGNetworkManager sharedManager] signinWithLoginName:loginName passwordHash:[password sha512] serverToken:serverToken completionBlock:^(NSData *data, NSError *error) {
             if (!error) {
                 RGAuthorization* authorization = [RGAuthorization authorizationWithData:data];
-                hud.labelText = @"Receiving cards list";
+                hud.labelText = @"Retriving cards list";
                 [[RGNetworkManager sharedManager] cardList:^(NSData *data, NSError *error) {
                     hud.taskInProgress = NO;
                     [hud hide:YES];
