@@ -93,9 +93,10 @@ static NSString* kPushCardsList = @"OpenCardsList";
         weakSelf.cardsList = [RGCardsList cardListWithData:cardsData];
 //        return [Promise promiseWithValue:_cardsList];
     }).then(^(){
+        [weakSelf performSegueWithIdentifier:kPushCardsList sender:weakSelf];
+    }).finally(^{
         hud.taskInProgress = NO;
         [hud hide:YES];
-        [weakSelf performSegueWithIdentifier:kPushCardsList sender:weakSelf];
     });
 }
 

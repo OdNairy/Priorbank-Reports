@@ -22,6 +22,8 @@ typedef void(^RGResponseBlock)(NSData*, NSError*);
 + (Promise*)signinWithLogin:(NSString*)login password:(NSString*)password token:(NSString*)token;
 + (Promise*)cardList;
 
-- (void)transactionsForCardId:(NSString *)cardId from:(NSDate *)fromDate to:(NSDate *)toDate completionBlock:(void (^)(NSArray *transactions, NSError *error))completionBlock;
++(Promise*)transactionsForCardId:(NSString*)cardId from:(NSDate*)fromDate to:(NSDate*)toDate;
+
+//- (void)transactionsForCardId:(NSString *)cardId from:(NSDate *)fromDate to:(NSDate *)toDate completionBlock:(void (^)(NSArray *transactions, NSError *error))completionBlock;
 
 @end

@@ -14,6 +14,8 @@
 #import "RGNetworkManager.h"
 #import "RGCardTransactionsController.h"
 #import "RGHUD.h"
+#import "RXMLElement.h"
+#import "RGTransaction.h"
 
 static NSString* kOpenCardSegue = @"OpenCard";
 
@@ -91,16 +93,23 @@ static NSString* kOpenCardSegue = @"OpenCard";
     RGHUD* hud = [RGHUD HUDWithGrace:kDefaultGracePeriod inView:self.view];
     hud.labelText = @"Loading transactions list";
     [hud show:YES];
-    [[RGNetworkManager sharedManager] transactionsForCardId:card.cardIdentifier from:fromDate to:[[NSDate alloc] initWithTimeIntervalSinceNow:0] completionBlock:^(NSArray *transactions, NSError *error) {
+    
+    [RGNetworkManager transactionsForCardId:card.cardIdentifier from:fromDate to:[NSDate date]]
+    .thenOn(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),^(NSData* data){
+        NSMutableArray * transactions = [NSMutableArray array];
+        RXMLElement *rxmlElement = [RXMLElement elementFromXMLData:data];
+        [rxmlElement iterateWithRootXPath:@"//TRANSACTION" usingBlock:^(RXMLElement *transactionXMLElement) {
+            [transactions addObject:[RGTransaction transactionWithXMLElement:transactionXMLElement]];
+        }];
+        return [Promise promiseWithValue:transactions];
+    }).then(^(NSArray* transactions){
         hud.taskInProgress = NO;
         [hud hide:YES];
-        if (!error) {
-            RGCardTransactionsController* transactionsController = [weakSelf.storyboard instantiateViewControllerWithIdentifier:@"RGCardTransactionsController"];
-            transactionsController.transactions = transactions;
-            transactionsController.card = card;
-            [weakSelf.navigationController pushViewController:transactionsController animated:YES];
-        }
-    }];
+        RGCardTransactionsController* transactionsController = [weakSelf.storyboard instantiateViewControllerWithIdentifier:@"RGCardTransactionsController"];
+        transactionsController.transactions = transactions;
+        transactionsController.card = card;
+        [weakSelf.navigationController pushViewController:transactionsController animated:YES];
+    });
 }
 
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{

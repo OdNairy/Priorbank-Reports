@@ -131,39 +131,44 @@ NSString* urlEncodedValue(NSString* str){
     return [NSURLConnection promise:urlRequest];
 }
 
-- (void)transactionsForCardId:(NSString *)cardId from:(NSDate *)fromDate to:(NSDate *)toDate completionBlock:(void (^)(NSArray *transactions, NSError *error))completionBlock {
++(Promise*)transactionsForCardId:(NSString*)cardId from:(NSDate*)fromDate to:(NSDate*)toDate{
     NSParameterAssert([fromDate compare:toDate] == NSOrderedAscending);
     NSParameterAssert(cardId);
-
+    
     NSURL *url = actionURL(@"GateWay");
     NSMutableURLRequest *urlRequest = urlRequestFromURL(url);
     [urlRequest setHTTPMethod:@"POST"];
-
+    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-
+    
     NSString *fromDateString, *toDateString;
     fromDateString = [dateFormatter stringFromDate:fromDate];
     toDateString = [dateFormatter stringFromDate:toDate];
-
+    
     NSString *httpBodyString = [NSString stringWithFormat:@"Template=OWS_vpsk&@ObjID=%@&P_DATE_FROM=%@&P_DATE_TO=%@",cardId,fromDateString,toDateString];
     [urlRequest setHTTPBody:[httpBodyString dataUsingEncoding:NSUTF8StringEncoding]];
-    [NSURLConnection asynchRequest:urlRequest completion:^(id data, NSError *error) {
-        NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"s: %@",string);
-        NSMutableArray * transactions = [NSMutableArray array];
-
-        RXMLElement *rxmlElement = [RXMLElement elementFromXMLData:data];
-        [rxmlElement iterateWithRootXPath:@"//TRANSACTION" usingBlock:^(RXMLElement *transactionXMLElement) {
-            [transactions addObject:[RGTransaction transactionWithXMLElement:transactionXMLElement]];
-        }];
-
-        if (completionBlock) {
-            completionBlock(transactions,error);
-        }
-    }];
+    
+    return [NSURLConnection promise:urlRequest];
 }
+
+//- (void)transactionsForCardId:(NSString *)cardId from:(NSDate *)fromDate to:(NSDate *)toDate completionBlock:(void (^)(NSArray *transactions, NSError *error))completionBlock {
+//
+//
+//
+//    [NSURLConnection asynchRequest:urlRequest completion:^(id data, NSError *error) {
+//        NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//        NSLog(@"s: %@",string);
+//        NSMutableArray * transactions = [NSMutableArray array];
+//
+//        
+//
+//        if (completionBlock) {
+//            completionBlock(transactions,error);
+//        }
+//    }];
+//}
 
 
 @end
