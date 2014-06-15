@@ -71,13 +71,14 @@ static NSString* kPushCardsList = @"OpenCardsList";
         return;
     }
 
-    RGHUD* hud = [RGHUD HUDWithGrace:0 inView:self.view];
+    RGHUD* hud = [RGHUD HUDWithGrace:kDefaultGracePeriod inView:self.view];
     hud.labelText = @"Initial setup";
     [hud show:YES];
     hud.progress = 0;
     
     
     __weak __typeof(self) weakSelf = self;
+    dispatch_queue_t backgroundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
     
     [RGNetworkManager initialSetupForServerToken].then(^(NSString* serverToken){
         return  urlEncodedValue([serverToken encryptByPriorKeys]);
@@ -88,10 +89,12 @@ static NSString* kPushCardsList = @"OpenCardsList";
 //        RGAuthorization* authorization = [RGAuthorization authorizationWithData:signinData];
         hud.labelText = @"Retriving cards list";
         return [RGNetworkManager cardList];
-    }).then(^(NSData* cardsData){
+    }).thenOn(backgroundQueue,^(NSData* cardsData){
+        weakSelf.cardsList = [RGCardsList cardListWithData:cardsData];
+//        return [Promise promiseWithValue:_cardsList];
+    }).then(^(){
         hud.taskInProgress = NO;
         [hud hide:YES];
-        weakSelf.cardsList = [RGCardsList cardListWithData:cardsData];
         [weakSelf performSegueWithIdentifier:kPushCardsList sender:weakSelf];
     });
 }
