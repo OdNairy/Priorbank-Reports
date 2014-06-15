@@ -33,5 +33,7 @@
 @property (nonatomic, assign,getter = isStCashCard) BOOL stCashCard;
 @property(nonatomic, strong) NSString *pkgName;
 @property (nonatomic, strong) RGBalance* balance;
+
 -(instancetype)initWithAttributes:(NSDictionary*)attributes;
+-(NSString*)presentName;
 @end

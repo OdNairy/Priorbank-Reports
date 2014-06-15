@@ -14,6 +14,8 @@
 #import "RGCardsList.h"
 #import "RGCardsListController.h"
 
+#import "RGHUD.h"
+
 static NSString* kPushCardsList = @"OpenCardsList";
 
 @interface RGLoginViewController ()
@@ -40,6 +42,7 @@ static NSString* kPushCardsList = @"OpenCardsList";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initializeControls];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:(UIBarButtonItemStyleDone) target:nil action:nil];
 }
 
 - (IBAction)signInButtonTapped {
@@ -52,20 +55,26 @@ static NSString* kPushCardsList = @"OpenCardsList";
         return;
     }
 
+    RGHUD* hud = [RGHUD HUDWithGrace:kDefaultGracePeriod inView:self.view];
+    hud.labelText = @"Initial setup";
+    [hud show:YES];
+    
     __weak __typeof(self) weakSelf = self;
     [[RGNetworkManager sharedManager] initialSetupForServerToken:^(NSString *serverToken, NSError *er) {
         NSLog(@"ServerToken: %@", serverToken);
 
+        hud.labelText = @"Authentification";
         [[RGNetworkManager sharedManager] signinWithLoginName:loginName passwordHash:[password sha512] serverToken:serverToken completionBlock:^(NSData *data, NSError *error) {
             if (!error) {
                 RGAuthorization* authorization = [RGAuthorization authorizationWithData:data];
+                hud.labelText = @"Receiving cards list";
                 [[RGNetworkManager sharedManager] cardList:^(NSData *data, NSError *error) {
+                    hud.taskInProgress = NO;
+                    [hud hide:YES];
                     if (!error) {
                         self.cardsList = [RGCardsList cardListWithData:data];
                         [weakSelf performSegueWithIdentifier:kPushCardsList sender:weakSelf];
                     }
-                    //                NSString* s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                    //                NSLog(@"s: %@",s);
                 }];
             }
         }];

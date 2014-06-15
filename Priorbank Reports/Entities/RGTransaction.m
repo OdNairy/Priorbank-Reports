@@ -14,6 +14,11 @@
     return transaction;
 }
 
++(id)entityWithXMLElement:(RXMLElement *)element{
+    RGTransaction* transaction = [[RGTransaction alloc]initWithXMLElement:element];
+    return transaction;
+}
+
 -(instancetype)initWithXMLElement:(RXMLElement*)element{
     self = [super init];
     if (self) {

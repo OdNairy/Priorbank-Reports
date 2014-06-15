@@ -13,6 +13,7 @@
 #import "RGCardInListCell.h"
 #import "RGNetworkManager.h"
 #import "RGCardTransactionsController.h"
+#import "RGHUD.h"
 
 static NSString* kOpenCardSegue = @"OpenCard";
 
@@ -25,12 +26,6 @@ static NSString* kOpenCardSegue = @"OpenCard";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -77,8 +72,8 @@ static NSString* kOpenCardSegue = @"OpenCard";
     RGCardInListCell *cell = (RGCardInListCell*)[tableView dequeueReusableCellWithIdentifier:@"CardCell"];
 
     RGCard* card = [self cardsArrayForSection:indexPath.section][indexPath.row];
-
-    cell.descriptionLabel.text = card.description;
+    
+    cell.descriptionLabel.text = [card presentName];
 
     return cell;
 }
@@ -92,7 +87,13 @@ static NSString* kOpenCardSegue = @"OpenCard";
     NSDate *fromDate = [(NSCalendar *)[NSCalendar currentCalendar] dateByAddingComponents:components
                                                                                    toDate:[NSDate date] options:0];
     __weak __typeof(self) weakSelf = self;
+    
+    RGHUD* hud = [RGHUD HUDWithGrace:kDefaultGracePeriod inView:self.view];
+    hud.labelText = @"Loading transactions list";
+    [hud show:YES];
     [[RGNetworkManager sharedManager] transactionsForCardId:card.cardIdentifier from:fromDate to:[[NSDate alloc] initWithTimeIntervalSinceNow:0] completionBlock:^(NSArray *transactions, NSError *error) {
+        hud.taskInProgress = NO;
+        [hud hide:YES];
         if (!error) {
             RGCardTransactionsController* transactionsController = [weakSelf.storyboard instantiateViewControllerWithIdentifier:@"RGCardTransactionsController"];
             transactionsController.transactions = transactions;

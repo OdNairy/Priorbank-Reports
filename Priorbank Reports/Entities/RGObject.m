@@ -5,8 +5,5 @@
 
 #import "RGObject.h"
 
-
-@implementation RGObject {
-
-}
+@implementation RGObject
 @end

@@ -33,6 +33,7 @@
 		FE24EEDA1939AA8C00BD6125 /* RGCardInListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE24EED91939AA8C00BD6125 /* RGCardInListCell.m */; };
 		FE36874A193B4A87009D4B55 /* RGCardTransactionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE368749193B4A87009D4B55 /* RGCardTransactionsController.m */; };
 		FE51C6FE193B3F28005DE552 /* RGTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = FE51C6FD193B3F28005DE552 /* RGTransaction.m */; };
+		FEDC89F0194DAFC50084CD3E /* RGHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDC89EF194DAFC50084CD3E /* RGHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,8 @@
 		FE368749193B4A87009D4B55 /* RGCardTransactionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGCardTransactionsController.m; sourceTree = "<group>"; };
 		FE51C6FC193B3F28005DE552 /* RGTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RGTransaction.h; path = Entities/RGTransaction.h; sourceTree = "<group>"; };
 		FE51C6FD193B3F28005DE552 /* RGTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RGTransaction.m; path = Entities/RGTransaction.m; sourceTree = "<group>"; };
+		FEDC89EE194DAFC50084CD3E /* RGHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RGHUD.h; path = Views/RGHUD.h; sourceTree = "<group>"; };
+		FEDC89EF194DAFC50084CD3E /* RGHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RGHUD.m; path = Views/RGHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,8 +226,8 @@
 				FE51C6FC193B3F28005DE552 /* RGTransaction.h */,
 				FE51C6FD193B3F28005DE552 /* RGTransaction.m */,
 				A0B41C78056030961BA805E8 /* RGXMLEntityProtocol.h */,
-				A0B4131A2C9C2F1FF2BFB644 /* RGObject.m */,
 				A0B41DAC8DE540D3B058D288 /* RGObject.h */,
+				A0B4131A2C9C2F1FF2BFB644 /* RGObject.m */,
 				A0B41C5D2556A12B604CDF4C /* RGError.h */,
 				A0B41C233AA8C7164D3D8701 /* RGError.m */,
 			);
@@ -235,6 +238,8 @@
 			isa = PBXGroup;
 			children = (
 				FE24EED71939AA5F00BD6125 /* Cells */,
+				FEDC89EE194DAFC50084CD3E /* RGHUD.h */,
+				FEDC89EF194DAFC50084CD3E /* RGHUD.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				FE24EED219392CF200BD6125 /* RGBalance.m in Sources */,
 				FE24EECF19392B2700BD6125 /* RGCard.m in Sources */,
 				FE24EEDA1939AA8C00BD6125 /* RGCardInListCell.m in Sources */,
+				FEDC89F0194DAFC50084CD3E /* RGHUD.m in Sources */,
 				FE15FD3419367334000CBB71 /* main.m in Sources */,
 				FE15FD3819367334000CBB71 /* RGAppDelegate.m in Sources */,
 				FE36874A193B4A87009D4B55 /* RGCardTransactionsController.m in Sources */,
