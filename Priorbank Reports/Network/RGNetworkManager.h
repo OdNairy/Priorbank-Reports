@@ -8,15 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+NSURL *actionURL(NSString *action);
+NSMutableURLRequest *urlRequestFromURL(NSURL *url);
+NSString* urlEncodedValue(NSString* str);
+
+
 typedef void(^RGResponseBlock)(NSData*, NSError*);
 
 @interface RGNetworkManager : NSObject
 + (instancetype)sharedManager;
 
-- (void)initialSetupForServerToken:(void (^)(NSString *serverToken, NSError *er))block;
-- (void)signinWithLoginName:(NSString *)loginName passwordHash:(NSString *)passwordHash serverToken:(NSString *)serverToken completionBlock:(void (^)(NSData *, NSError *))completionBlock;
++ (Promise*)initialSetupForServerToken;
++ (Promise*)signinWithLogin:(NSString*)login password:(NSString*)password token:(NSString*)token;
++ (Promise*)cardList;
 
-- (void)cardList:(RGResponseBlock)completionBlock;
 - (void)transactionsForCardId:(NSString *)cardId from:(NSDate *)fromDate to:(NSDate *)toDate completionBlock:(void (^)(NSArray *transactions, NSError *error))completionBlock;
 
 @end

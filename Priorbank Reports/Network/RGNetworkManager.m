@@ -92,7 +92,7 @@ NSString* urlEncodedValue(NSString* str){
     return sharedManager;
 }
 
-- (void)removeCookiesForURL:(NSURL *)url {
++ (void)removeCookiesForURL:(NSURL *)url {
     NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
     NSArray *cookies = [storage cookiesForURL:url];
     for (NSHTTPCookie *cookie in cookies) {
@@ -100,52 +100,35 @@ NSString* urlEncodedValue(NSString* str){
     }
 }
 
-- (void)initialSetupForServerToken:(void (^)(NSString *serverToken, NSError *er))block {
-    NSAssert(block != nil, @"Block must exist on this function.");
++ (Promise*)initialSetupForServerToken{
     NSURL *url = actionURL(@"setup");
-    [self removeCookiesForURL:url];
+    [RGNetworkManager removeCookiesForURL:url];
 
     NSURLRequest *urlRequest = urlRequestFromURL(url);
-
-    [NSURLConnection sendAsynchronousRequest:urlRequest queue:([NSOperationQueue mainQueue]) completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        NSString *serverToken = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        block(serverToken, connectionError);
-    }];
+    return [NSURLConnection promise:urlRequest];
 }
 
-- (void)signinWithLoginName:(NSString *)loginName passwordHash:(NSString *)passwordHash serverToken:(NSString *)serverToken completionBlock:(void (^)(NSData *, NSError *))completionBlock {
-    NSParameterAssert(loginName.length > 0);
-    NSParameterAssert(passwordHash.length > 0);
-    NSParameterAssert(serverToken.length > 0);
-
-    NSString *clientToken = urlEncodedValue([serverToken encryptByPriorKeys]);
-    NSString *body = [NSString stringWithFormat:@"&UserName=%@&UserPassword=%@&Token=%@", loginName, passwordHash,
-                                                clientToken];
-
++ (Promise*)signinWithLogin:(NSString*)login password:(NSString*)password token:(NSString*)token{
+    NSParameterAssert(login.length > 0);
+    NSParameterAssert(password.length > 0);
+    NSParameterAssert(token.length > 0);
+    
+    NSString *clientToken = urlEncodedValue([token encryptByPriorKeys]);
+    NSString *body = [NSString stringWithFormat:@"&UserName=%@&UserPassword=%@&Token=%@", login, password,
+                      clientToken];
+    
     NSURL *url = actionURL(@"login");
     NSMutableURLRequest *urlRequest = [urlRequestFromURL(url) mutableCopy];
     [urlRequest setHTTPMethod:@"POST"];
     [urlRequest setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
-
-    [NSURLConnection asynchRequest:urlRequest completion:^(id data, NSError *error) {
-        if (completionBlock) {
-            completionBlock(data, error);
-        }
-    }];
+    return [NSURLConnection promise:urlRequest];
 }
 
-- (void)cardList:(RGResponseBlock)completionBlock{
-    NSParameterAssert(completionBlock);
-    
++(Promise*)cardList{
     NSMutableURLRequest* urlRequest = urlRequestFromURL(actionURL(@"GateWay"));
     [urlRequest setHTTPMethod:@"POST"];
     [urlRequest setHTTPBody:[@"Template=CardList" dataUsingEncoding:NSUTF8StringEncoding]];
-
-    [NSURLConnection asynchRequest:urlRequest completion:^(id data, NSError *error) {
-        if (completionBlock) {
-            completionBlock(data, error);
-        }
-    }];
+    return [NSURLConnection promise:urlRequest];
 }
 
 - (void)transactionsForCardId:(NSString *)cardId from:(NSDate *)fromDate to:(NSDate *)toDate completionBlock:(void (^)(NSArray *transactions, NSError *error))completionBlock {

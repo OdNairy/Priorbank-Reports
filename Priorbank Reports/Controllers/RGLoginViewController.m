@@ -71,31 +71,29 @@ static NSString* kPushCardsList = @"OpenCardsList";
         return;
     }
 
-    RGHUD* hud = [RGHUD HUDWithGrace:kDefaultGracePeriod inView:self.view];
+    RGHUD* hud = [RGHUD HUDWithGrace:0 inView:self.view];
     hud.labelText = @"Initial setup";
     [hud show:YES];
     hud.progress = 0;
     
+    
     __weak __typeof(self) weakSelf = self;
-    [[RGNetworkManager sharedManager] initialSetupForServerToken:^(NSString *serverToken, NSError *er) {
-        NSLog(@"ServerToken: %@", serverToken);
-
+    
+    [RGNetworkManager initialSetupForServerToken].then(^(NSString* serverToken){
+        return  urlEncodedValue([serverToken encryptByPriorKeys]);
+    }).then(^(NSString* encryptedToken){
         hud.labelText = @"Authentification";
-        [[RGNetworkManager sharedManager] signinWithLoginName:loginName passwordHash:[password sha512] serverToken:serverToken completionBlock:^(NSData *data, NSError *error) {
-            if (!error) {
-                RGAuthorization* authorization = [RGAuthorization authorizationWithData:data];
-                hud.labelText = @"Retriving cards list";
-                [[RGNetworkManager sharedManager] cardList:^(NSData *data, NSError *error) {
-                    hud.taskInProgress = NO;
-                    [hud hide:YES];
-                    if (!error) {
-                        self.cardsList = [RGCardsList cardListWithData:data];
-                        [weakSelf performSegueWithIdentifier:kPushCardsList sender:weakSelf];
-                    }
-                }];
-            }
-        }];
-    }];
+        return [RGNetworkManager signinWithLogin:loginName password:[password sha512] token:encryptedToken];
+    }).then(^(NSData* signinData){
+//        RGAuthorization* authorization = [RGAuthorization authorizationWithData:signinData];
+        hud.labelText = @"Retriving cards list";
+        return [RGNetworkManager cardList];
+    }).then(^(NSData* cardsData){
+        hud.taskInProgress = NO;
+        [hud hide:YES];
+        weakSelf.cardsList = [RGCardsList cardListWithData:cardsData];
+        [weakSelf performSegueWithIdentifier:kPushCardsList sender:weakSelf];
+    });
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
