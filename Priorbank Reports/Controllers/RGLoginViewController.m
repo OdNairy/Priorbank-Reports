@@ -91,7 +91,7 @@ static NSString* kPushCardsList = @"OpenCardsList";
         return [RGNetworkManager cardList];
     }).thenOn(backgroundQueue,^(NSData* cardsData){
         weakSelf.cardsList = [RGCardsList cardListWithData:cardsData];
-//        return [Promise promiseWithValue:_cardsList];
+        return [Promise promiseWithValue:_cardsList];
     }).then(^(){
         [weakSelf performSegueWithIdentifier:kPushCardsList sender:weakSelf];
     }).finally(^{

@@ -52,7 +52,7 @@
 -(NSString *)presentName{
     NSString* userName = self.userSynonym;
     if (!userName.length) {
-        userName = self.description;
+        userName = self.synonym;
     }
     return userName;
 }

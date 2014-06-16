@@ -27,7 +27,7 @@
 }
 
 -(void)updateTitle{
-    self.title = self.card.userSynonym.length?self.card.userSynonym:self.card.synonym;
+    self.title = [self.card presentName];
 }
 
 - (IBAction)resortTapped:(UIBarButtonItem *)sender {
