@@ -112,10 +112,9 @@ NSString* urlEncodedValue(NSString* str){
     NSParameterAssert(login.length > 0);
     NSParameterAssert(password.length > 0);
     NSParameterAssert(token.length > 0);
-    
-    NSString *clientToken = urlEncodedValue([token encryptByPriorKeys]);
+
     NSString *body = [NSString stringWithFormat:@"&UserName=%@&UserPassword=%@&Token=%@", login, password,
-                      clientToken];
+                      token];
     
     NSURL *url = actionURL(@"login");
     NSMutableURLRequest *urlRequest = [urlRequestFromURL(url) mutableCopy];
