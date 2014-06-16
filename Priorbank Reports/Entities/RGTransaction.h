@@ -21,7 +21,7 @@
 @property (nonatomic, assign) CGFloat amount;
 @property (nonatomic, assign) CGFloat feeAmount;
 @property (nonatomic, assign) CGFloat accountAmount;
-@property (nonatomic, strong) NSString* description;
+@property (nonatomic, strong) NSString* descriptionValue;
 
 +(instancetype)transactionWithXMLElement:(RXMLElement*)element;
 + (NSDate *)dateFromTransactionDateString:(NSString *)dateString;

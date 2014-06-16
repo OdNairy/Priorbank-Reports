@@ -36,7 +36,7 @@
         self.amount =       [[element child:@"AMOUNT"] textAsDouble];
         self.feeAmount =    [[element child:@"FEE_AMOUNT"] textAsDouble];
         self.accountAmount = [[element child:@"ACCOUNT_AMOUNT"] textAsDouble];
-        self.description =  [[element child:@"TRANS_DETAILS"] text];
+        self.descriptionValue =  [[element child:@"TRANS_DETAILS"] text];
     }
     return self;
 }

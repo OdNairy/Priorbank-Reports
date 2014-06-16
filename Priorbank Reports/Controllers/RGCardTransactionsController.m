@@ -64,7 +64,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TransactionCell" forIndexPath:indexPath];
     RGTransaction* transaction = self.transactions[indexPath.row];
-    cell.textLabel.text = transaction.description;
+    cell.textLabel.text = [transaction descriptionValue];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%.0f %@ at %@",transaction.amount,transaction.currency, transaction.transactionDate];
     
     return cell;
