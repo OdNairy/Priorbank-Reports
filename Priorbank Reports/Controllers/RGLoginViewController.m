@@ -86,7 +86,7 @@ static NSString* kPushCardsList = @"OpenCardsList";
         hud.labelText = @"Authentification";
         return [RGNetworkManager signinWithLogin:loginName password:[password sha512] token:encryptedToken];
     }).then(^(NSData* signinData){
-//        RGAuthorization* authorization = [RGAuthorization authorizationWithData:signinData];
+        RGAuthorization* authorization = [RGAuthorization authorizationWithData:signinData];
         hud.labelText = @"Retriving cards list";
         return [RGNetworkManager cardList];
     }).thenOn(backgroundQueue,^(NSData* cardsData){

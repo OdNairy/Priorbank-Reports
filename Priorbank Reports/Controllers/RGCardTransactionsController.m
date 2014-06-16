@@ -10,6 +10,8 @@
 #import "RGTransaction.h"
 #import "RGCard.h"
 
+#import "RGTransactionCell.h"
+
 @interface RGCardTransactionsController ()
 
 @end
@@ -62,10 +64,21 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TransactionCell" forIndexPath:indexPath];
+    static NSDateFormatter* df;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        df = [[NSDateFormatter alloc] init];
+        NSString* dateFormat = [NSDateFormatter dateFormatFromTemplate:@"yyyyMMdd" options:0 locale:[NSLocale localeWithLocaleIdentifier:@"ru_RU"]];
+        [df setDateFormat:dateFormat];
+    });
+    
+    RGTransactionCell *cell = (RGTransactionCell*)[tableView dequeueReusableCellWithIdentifier:@"TransactionCell" forIndexPath:indexPath];
     RGTransaction* transaction = self.transactions[indexPath.row];
-    cell.textLabel.text = [transaction descriptionValue];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.0f %@ at %@",transaction.amount,transaction.currency, transaction.transactionDate];
+    cell.titleLabel.text = [transaction descriptionValue];
+    cell.dateLabel.text = [df stringFromDate:transaction.transactionDate];
+    cell.amountLabel.text = [NSString stringWithFormat:@"%.0f",transaction.amount];
+//    cell.textLabel.text = [transaction descriptionValue];
+//    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.0f %@ at %@",transaction.amount,transaction.currency, transaction.transactionDate];
     
     return cell;
 }
