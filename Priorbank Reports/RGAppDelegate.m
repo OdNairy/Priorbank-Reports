@@ -13,6 +13,21 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+//    NSString* correctURL = @"http://s7.pikabu.ru/images/previews_comm/2014-06_6/14037819436158.jpg";
+//    NSString* incorrectURL = @"http://s7.pikabu.ru/images/previews_comm/2014-06_6/14037819436158|eououe";
+//    [NSURLConnection GET:correctURL query:nil]
+//    .then(^id<NSObject>(UIImage* data){
+//        NSLog(@"data: %@",data);
+//        if ([data isKindOfClass:[UIImage class]]) {
+//            return [NSError errorWithDomain:@"blabla" code:3 userInfo:nil];
+//        }
+//        return data;
+//    })
+//    .catch(^(NSError* error){
+//        NSLog(@"Error: %@",error);
+//    }).then(^(NSData* d){
+//        return [NSError errorWithDomain:@"blabla" code:3 userInfo:nil];
+//    });
     return YES;
 }
 							

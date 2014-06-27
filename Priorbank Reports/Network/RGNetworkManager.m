@@ -12,6 +12,9 @@
 #import "RGTransaction.h"
 #import "RGError.h"
 
+const NSString* const PBRUnderlyingErrorKey = @"PBRUnderlyingErrorKey";
+static NSString* const PBRErrorDomain = @"PriorBank Reports";
+
 static NSTimeInterval kNetworkTimeout = 30;
 static NSString *kServerAPIURL = @"https://www.prior.by/api/";
 
@@ -40,8 +43,10 @@ NSString* urlEncodedValue(NSString* str){
         return result;
 }
 
+
 @interface NSURLConnection(RGNetwork)
 +(void)asynchRequest:(NSURLRequest *)request completion:(void(^)(id data, NSError *error))completion;
++(Promise *)pbr_promise:(NSURLRequest *)rq;
 @end
 
 @implementation NSURLConnection(RGNetwork)
@@ -71,7 +76,7 @@ NSString* urlEncodedValue(NSString* str){
                                  cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
 
                 if (completion) {
-                    completion(nil,[NSError errorWithDomain:@"NetworkDomain" code:-42 userInfo:@{@"ServerTitle":error.title}]);
+                    completion(nil,[NSError errorWithDomain:@"NetworkDomain" code:-42 userInfo:@{PBRUnderlyingErrorKey:error.title}]);
                 }
             } else if (completion) {
                 completion(data,nil);
@@ -80,9 +85,23 @@ NSString* urlEncodedValue(NSString* str){
     }];
 }
 
++(Promise *)pbr_promise:(NSURLRequest *)rq{
+    Promise* promise = [NSURLConnection promise:rq].
+    then(^id(NSData*data){
+        if ([data isKindOfClass:[NSData class]] && [RGError isDataPresentError:data]) {
+            RGError* error = [RGError entityWithXMLElement:[RXMLElement elementFromXMLData:data]];
+            NSError* err = [NSError errorWithDomain:PBRErrorDomain code:-400 userInfo:@{PBRUnderlyingErrorKey:error}];
+            return err;
+        }
+        return data;
+    });
+    return promise;
+}
+
 @end
 
 @implementation RGNetworkManager
+
 + (instancetype)sharedManager {
     static dispatch_once_t onceToken;
     static RGNetworkManager *sharedManager = nil;
@@ -105,7 +124,9 @@ NSString* urlEncodedValue(NSString* str){
     [RGNetworkManager removeCookiesForURL:url];
 
     NSURLRequest *urlRequest = urlRequestFromURL(url);
-    return [NSURLConnection promise:urlRequest];
+    Promise* promise = [NSURLConnection pbr_promise:urlRequest];
+    
+    return promise;
 }
 
 + (Promise*)signinWithLogin:(NSString*)login password:(NSString*)password token:(NSString*)token{
@@ -120,14 +141,14 @@ NSString* urlEncodedValue(NSString* str){
     NSMutableURLRequest *urlRequest = [urlRequestFromURL(url) mutableCopy];
     [urlRequest setHTTPMethod:@"POST"];
     [urlRequest setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
-    return [NSURLConnection promise:urlRequest];
+    return [NSURLConnection pbr_promise:urlRequest];
 }
 
 +(Promise*)cardList{
     NSMutableURLRequest* urlRequest = urlRequestFromURL(actionURL(@"GateWay"));
     [urlRequest setHTTPMethod:@"POST"];
     [urlRequest setHTTPBody:[@"Template=CardList" dataUsingEncoding:NSUTF8StringEncoding]];
-    return [NSURLConnection promise:urlRequest];
+    return [NSURLConnection pbr_promise:urlRequest];
 }
 
 +(Promise*)transactionsForCardId:(NSString*)cardId from:(NSDate*)fromDate to:(NSDate*)toDate{
@@ -149,7 +170,7 @@ NSString* urlEncodedValue(NSString* str){
     NSString *httpBodyString = [NSString stringWithFormat:@"Template=OWS_vpsk&@ObjID=%@&P_DATE_FROM=%@&P_DATE_TO=%@",cardId,fromDateString,toDateString];
     [urlRequest setHTTPBody:[httpBodyString dataUsingEncoding:NSUTF8StringEncoding]];
     
-    return [NSURLConnection promise:urlRequest];
+    return [NSURLConnection pbr_promise:urlRequest];
 }
 
 //- (void)transactionsForCardId:(NSString *)cardId from:(NSDate *)fromDate to:(NSDate *)toDate completionBlock:(void (^)(NSArray *transactions, NSError *error))completionBlock {

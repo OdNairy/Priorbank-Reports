@@ -13,8 +13,10 @@
 #import "RGAuthorization.h"
 #import "RGCardsList.h"
 #import "RGCardsListController.h"
+#import "RXMLElement+ExtendedXMLElement.h"
 
 #import "RGHUD.h"
+#import "RGError.h"
 
 static NSString* kPushCardsList = @"OpenCardsList";
 
@@ -80,6 +82,7 @@ static NSString* kPushCardsList = @"OpenCardsList";
     __weak __typeof(self) weakSelf = self;
     dispatch_queue_t backgroundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
     
+    
     [RGNetworkManager initialSetupForServerToken].then(^(NSString* serverToken){
         return  urlEncodedValue([serverToken encryptByPriorKeys]);
     }).then(^(NSString* encryptedToken){
@@ -97,6 +100,8 @@ static NSString* kPushCardsList = @"OpenCardsList";
     }).finally(^{
         hud.taskInProgress = NO;
         [hud hide:YES];
+    }).catch(^(NSError* error){
+        NSLog(@"Error: %@",error);
     });
 }
 

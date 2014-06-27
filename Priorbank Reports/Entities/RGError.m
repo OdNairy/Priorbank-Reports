@@ -24,5 +24,14 @@
     return self;
 }
 
++(BOOL)isDataPresentError:(NSData*)data{
+    RXMLElement* element = [RXMLElement elementFromXMLData:data];
+    RGError* error = [RGError entityWithXMLElement:element];
+    return (error.title.length && error.message.length) || [element.tag isEqualToString:@"Error"];
+}
+
+-(NSString *)description{
+    return [NSString stringWithFormat:@"<%@: %p title='%@', message='%@'>",self.class,self,self.title,self.message];
+}
 
 @end

@@ -12,6 +12,8 @@ NSURL *actionURL(NSString *action);
 NSMutableURLRequest *urlRequestFromURL(NSURL *url);
 NSString* urlEncodedValue(NSString* str);
 
+extern const NSString* const PBRUnderlyingErrorKey;
+
 
 typedef void(^RGResponseBlock)(NSData*, NSError*);
 

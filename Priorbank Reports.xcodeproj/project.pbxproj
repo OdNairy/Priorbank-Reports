@@ -304,7 +304,7 @@
 		FE15FD1C19367334000CBB71 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = RG;
+				CLASSPREFIX = PBR;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Roman Gardukevich";
 			};
