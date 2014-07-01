@@ -75,6 +75,7 @@ static NSString* kPushCardsList = @"OpenCardsList";
 #pragma mark -
 
 - (IBAction)signInButtonTapped {
+    [self.view endEditing:YES];
     __weak __typeof(self) myself = self;
     NSString *loginName = myself.loginNameTextField.text;
     NSString *password = myself.passwordTextField.text;
@@ -83,6 +84,7 @@ static NSString* kPushCardsList = @"OpenCardsList";
         // TODO: alert not-input params
         return;
     }
+
 
     RGHUD* hud = [RGHUD HUDWithGrace:kDefaultGracePeriod inView:self.view];
     hud.labelText = @"Initial setup";
@@ -101,6 +103,9 @@ static NSString* kPushCardsList = @"OpenCardsList";
         return [RGNetworkManager signinWithLogin:loginName password:[password sha512] token:encryptedToken];
     }).then(^(NSData* signinData){
         RGAuthorization* authorization = [RGAuthorization authorizationWithData:signinData];
+        if (authorization){
+
+        }
         hud.labelText = @"Retriving cards list";
         return [RGNetworkManager cardList];
     }).thenOn(backgroundQueue,^(NSData* cardsData){
@@ -108,6 +113,7 @@ static NSString* kPushCardsList = @"OpenCardsList";
         return [Promise promiseWithValue:_cardsList];
     }).then(^(){
         [weakSelf performSegueWithIdentifier:kPushCardsList sender:weakSelf];
+        myself.passwordTextField.text = nil;
     }).finally(^{
         hud.taskInProgress = NO;
         [hud hide:YES];
