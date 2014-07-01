@@ -34,7 +34,7 @@ static NSString* kPushCardsList = @"OpenCardsList";
     self.loginNameTextField.attributedPlaceholder = [[NSAttributedString alloc]initWithString:@"loginname" attributes:@{NSForegroundColorAttributeName:[[UIColor whiteColor] colorWithAlphaComponent:.3],NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Thin" size:10.0]}];
     self.passwordTextField.attributedPlaceholder = [[NSAttributedString alloc]initWithString:@"password" attributes:@{NSForegroundColorAttributeName:[[UIColor whiteColor] colorWithAlphaComponent:.3],NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Thin" size:10.0]}];
     [self.signInButton setTitle:@"Sign in" forState:UIControlStateNormal];
-    
+//    self.contentScrollView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
 #ifdef DEBUG
     self.loginNameTextField.text = @"demo";
     self.passwordTextField.text = @"demo";
@@ -47,6 +47,13 @@ static NSString* kPushCardsList = @"OpenCardsList";
     [super viewDidLoad];
     [self initializeControls];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:(UIBarButtonItemStyleDone) target:nil action:nil];
+}
+
+-(void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    CGSize contentSize = self.contentScrollView.bounds.size;
+    contentSize.height -=20;
+    self.contentScrollView.contentSize = contentSize;
 }
 
 -(NSUInteger)supportedInterfaceOrientations{

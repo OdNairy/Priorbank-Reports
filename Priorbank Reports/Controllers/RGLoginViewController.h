@@ -10,5 +10,6 @@
 
 @interface RGLoginViewController : UIViewController
 @property (nonatomic,weak) IBOutlet UIImageView* backgroundView;
+@property (nonatomic, weak) IBOutlet UIScrollView* contentScrollView;
 
 @end
