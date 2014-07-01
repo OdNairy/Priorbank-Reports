@@ -13,6 +13,8 @@
 		A0B41DB108D32BA0D5D00B65 /* RGObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B4131A2C9C2F1FF2BFB644 /* RGObject.m */; };
 		A0B41F8E280C2836E831206F /* RGError.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B41C233AA8C7164D3D8701 /* RGError.m */; };
 		FE01F006194F88780036CB31 /* RGTransactionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE01F005194F88780036CB31 /* RGTransactionCell.m */; };
+		FE0E6DD21961DF4000BC2FA5 /* PBRBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0E6DD11961DF4000BC2FA5 /* PBRBehaviour.m */; };
+		FE0E6DD51961DF8300BC2FA5 /* PBRBlurBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0E6DD41961DF8300BC2FA5 /* PBRBlurBehaviour.m */; };
 		FE15FD2819367334000CBB71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE15FD2719367334000CBB71 /* Foundation.framework */; };
 		FE15FD2A19367334000CBB71 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE15FD2919367334000CBB71 /* CoreGraphics.framework */; };
 		FE15FD2C19367334000CBB71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE15FD2B19367334000CBB71 /* UIKit.framework */; };
@@ -35,9 +37,89 @@
 		FE24EEDA1939AA8C00BD6125 /* RGCardInListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE24EED91939AA8C00BD6125 /* RGCardInListCell.m */; };
 		FE36874A193B4A87009D4B55 /* RGCardTransactionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE368749193B4A87009D4B55 /* RGCardTransactionsController.m */; };
 		FE51C6FE193B3F28005DE552 /* RGTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = FE51C6FD193B3F28005DE552 /* RGTransaction.m */; };
+		FEBAE54A1961E7B900502E69 /* PBRViewElements.h in Headers */ = {isa = PBXBuildFile; fileRef = FEBAE5491961E7B900502E69 /* PBRViewElements.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEBAE5501961E7BA00502E69 /* PBRViewElements.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBAE5451961E7B900502E69 /* PBRViewElements.framework */; };
+		FEBAE5571961E7BA00502E69 /* PBRViewElementsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBAE5561961E7BA00502E69 /* PBRViewElementsTests.m */; };
+		FEBAE55A1961E7BA00502E69 /* PBRViewElements.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBAE5451961E7B900502E69 /* PBRViewElements.framework */; };
+		FEBAE55B1961E7BA00502E69 /* PBRViewElements.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEBAE5451961E7B900502E69 /* PBRViewElements.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		FEBAE5711961E85E00502E69 /* PBRBlurredImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = FEBAE56F1961E85E00502E69 /* PBRBlurredImageView.h */; };
+		FEBAE5721961E85E00502E69 /* PBRBlurredImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBAE5701961E85E00502E69 /* PBRBlurredImageView.m */; };
 		FEDC89F0194DAFC50084CD3E /* RGHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDC89EF194DAFC50084CD3E /* RGHUD.m */; };
 		FEDC89F4194E32D70084CD3E /* RGNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDC89F3194E32D70084CD3E /* RGNavigationController.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE5363FB1961EBE4000A4D6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE15FD1C19367334000CBB71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEBAE5441961E7B900502E69;
+			remoteInfo = PBRViewElements;
+		};
+		FE5363FD1961EBE4000A4D6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE15FD1C19367334000CBB71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEBAE5441961E7B900502E69;
+			remoteInfo = PBRViewElements;
+		};
+		FEBAE5511961E7BA00502E69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE15FD1C19367334000CBB71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEBAE5441961E7B900502E69;
+			remoteInfo = PBRViewElements;
+		};
+		FEBAE5581961E7BA00502E69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE15FD1C19367334000CBB71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEBAE5441961E7B900502E69;
+			remoteInfo = PBRViewElements;
+		};
+		FEBAE55C1961E7BA00502E69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE15FD1C19367334000CBB71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEBAE5441961E7B900502E69;
+			remoteInfo = PBRViewElements;
+		};
+		FEBAE5651961E7BB00502E69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE15FD1C19367334000CBB71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEBAE5441961E7B900502E69;
+			remoteInfo = PBRViewElements;
+		};
+		FEBAE5671961E7BB00502E69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE15FD1C19367334000CBB71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEBAE5441961E7B900502E69;
+			remoteInfo = PBRViewElements;
+		};
+		FEBAE5691961E7BC00502E69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE15FD1C19367334000CBB71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEBAE5441961E7B900502E69;
+			remoteInfo = PBRViewElements;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FEBAE5611961E7BA00502E69 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FEBAE55B1961E7BA00502E69 /* PBRViewElements.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1E9EAF9D4F744927A48D51B6 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -53,6 +135,10 @@
 		AFC662ACBF9D4F6C896C72D7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE01F004194F88780036CB31 /* RGTransactionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RGTransactionCell.h; path = Views/Cells/RGTransactionCell.h; sourceTree = "<group>"; };
 		FE01F005194F88780036CB31 /* RGTransactionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RGTransactionCell.m; path = Views/Cells/RGTransactionCell.m; sourceTree = "<group>"; };
+		FE0E6DD01961DF4000BC2FA5 /* PBRBehaviour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBRBehaviour.h; path = Behaviours/PBRBehaviour.h; sourceTree = "<group>"; };
+		FE0E6DD11961DF4000BC2FA5 /* PBRBehaviour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBRBehaviour.m; path = Behaviours/PBRBehaviour.m; sourceTree = "<group>"; };
+		FE0E6DD31961DF8300BC2FA5 /* PBRBlurBehaviour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBRBlurBehaviour.h; path = Behaviours/PBRBlurBehaviour.h; sourceTree = "<group>"; };
+		FE0E6DD41961DF8300BC2FA5 /* PBRBlurBehaviour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBRBlurBehaviour.m; path = Behaviours/PBRBlurBehaviour.m; sourceTree = "<group>"; };
 		FE15FD2419367334000CBB71 /* Priorbank Reports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Priorbank Reports.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE15FD2719367334000CBB71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FE15FD2919367334000CBB71 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -94,6 +180,14 @@
 		FE368749193B4A87009D4B55 /* RGCardTransactionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGCardTransactionsController.m; sourceTree = "<group>"; };
 		FE51C6FC193B3F28005DE552 /* RGTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RGTransaction.h; path = Entities/RGTransaction.h; sourceTree = "<group>"; };
 		FE51C6FD193B3F28005DE552 /* RGTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RGTransaction.m; path = Entities/RGTransaction.m; sourceTree = "<group>"; };
+		FEBAE5451961E7B900502E69 /* PBRViewElements.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PBRViewElements.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEBAE5481961E7B900502E69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEBAE5491961E7B900502E69 /* PBRViewElements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBRViewElements.h; sourceTree = "<group>"; };
+		FEBAE54F1961E7BA00502E69 /* PBRViewElementsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PBRViewElementsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEBAE5551961E7BA00502E69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEBAE5561961E7BA00502E69 /* PBRViewElementsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PBRViewElementsTests.m; sourceTree = "<group>"; };
+		FEBAE56F1961E85E00502E69 /* PBRBlurredImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBRBlurredImageView.h; sourceTree = "<group>"; };
+		FEBAE5701961E85E00502E69 /* PBRBlurredImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBRBlurredImageView.m; sourceTree = "<group>"; };
 		FEDC89EE194DAFC50084CD3E /* RGHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RGHUD.h; path = Views/RGHUD.h; sourceTree = "<group>"; };
 		FEDC89EF194DAFC50084CD3E /* RGHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RGHUD.m; path = Views/RGHUD.m; sourceTree = "<group>"; };
 		FEDC89F2194E32D70084CD3E /* RGNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RGNavigationController.h; path = Common/RGNavigationController.h; sourceTree = "<group>"; };
@@ -110,16 +204,45 @@
 				FE15FD2C19367334000CBB71 /* UIKit.framework in Frameworks */,
 				FE15FD2819367334000CBB71 /* Foundation.framework in Frameworks */,
 				59ACD43D058A4074B2EBEEB3 /* libPods.a in Frameworks */,
+				FEBAE55A1961E7BA00502E69 /* PBRViewElements.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEBAE5411961E7B900502E69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEBAE54C1961E7BA00502E69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEBAE5501961E7BA00502E69 /* PBRViewElements.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE0E6DCF1961DF2500BC2FA5 /* Behaviours */ = {
+			isa = PBXGroup;
+			children = (
+				FE0E6DD01961DF4000BC2FA5 /* PBRBehaviour.h */,
+				FE0E6DD11961DF4000BC2FA5 /* PBRBehaviour.m */,
+				FE0E6DD31961DF8300BC2FA5 /* PBRBlurBehaviour.h */,
+				FE0E6DD41961DF8300BC2FA5 /* PBRBlurBehaviour.m */,
+			);
+			name = Behaviours;
+			sourceTree = "<group>";
+		};
 		FE15FD1B19367334000CBB71 = {
 			isa = PBXGroup;
 			children = (
 				FE15FD2D19367334000CBB71 /* Priorbank Reports */,
+				FEBAE5461961E7B900502E69 /* PBRViewElements */,
+				FEBAE5531961E7BA00502E69 /* PBRViewElementsTests */,
 				FE15FD2619367334000CBB71 /* Frameworks */,
 				FE15FD2519367334000CBB71 /* Products */,
 				1E9EAF9D4F744927A48D51B6 /* Pods.xcconfig */,
@@ -130,6 +253,8 @@
 			isa = PBXGroup;
 			children = (
 				FE15FD2419367334000CBB71 /* Priorbank Reports.app */,
+				FEBAE5451961E7B900502E69 /* PBRViewElements.framework */,
+				FEBAE54F1961E7BA00502E69 /* PBRViewElementsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,6 +276,7 @@
 		FE15FD2D19367334000CBB71 /* Priorbank Reports */ = {
 			isa = PBXGroup;
 			children = (
+				FE0E6DCF1961DF2500BC2FA5 /* Behaviours */,
 				FE24EED61939AA5900BD6125 /* Views */,
 				FE24EEC6193920B500BD6125 /* Entities */,
 				FE15FD7419368A17000CBB71 /* Categories */,
@@ -169,6 +295,7 @@
 		FE15FD2E19367334000CBB71 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FEEB39C31961E0BC0021B313 /* Background Images */,
 				FE15FD2F19367334000CBB71 /* Priorbank Reports-Info.plist */,
 				FE15FD3019367334000CBB71 /* InfoPlist.strings */,
 				FE15FD3319367334000CBB71 /* main.m */,
@@ -267,6 +394,42 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		FEBAE5461961E7B900502E69 /* PBRViewElements */ = {
+			isa = PBXGroup;
+			children = (
+				FEBAE5491961E7B900502E69 /* PBRViewElements.h */,
+				FEBAE5471961E7B900502E69 /* Supporting Files */,
+				FEBAE56F1961E85E00502E69 /* PBRBlurredImageView.h */,
+				FEBAE5701961E85E00502E69 /* PBRBlurredImageView.m */,
+			);
+			path = PBRViewElements;
+			sourceTree = "<group>";
+		};
+		FEBAE5471961E7B900502E69 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FEBAE5481961E7B900502E69 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FEBAE5531961E7BA00502E69 /* PBRViewElementsTests */ = {
+			isa = PBXGroup;
+			children = (
+				FEBAE5561961E7BA00502E69 /* PBRViewElementsTests.m */,
+				FEBAE5541961E7BA00502E69 /* Supporting Files */,
+			);
+			path = PBRViewElementsTests;
+			sourceTree = "<group>";
+		};
+		FEBAE5541961E7BA00502E69 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FEBAE5551961E7BA00502E69 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		FEDC89F1194E32BD0084CD3E /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,7 +439,26 @@
 			name = Common;
 			sourceTree = "<group>";
 		};
+		FEEB39C31961E0BC0021B313 /* Background Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Background Images";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		FEBAE5421961E7B900502E69 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEBAE54A1961E7B900502E69 /* PBRViewElements.h in Headers */,
+				FEBAE5711961E85E00502E69 /* PBRBlurredImageView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		FE15FD2319367334000CBB71 /* Priorbank Reports */ = {
@@ -288,15 +470,59 @@
 				FE15FD2119367334000CBB71 /* Frameworks */,
 				FE15FD2219367334000CBB71 /* Resources */,
 				C3E9129CB6044CD28CA59555 /* Copy Pods Resources */,
+				FEBAE5611961E7BA00502E69 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FEBAE5591961E7BA00502E69 /* PBXTargetDependency */,
+				FEBAE55D1961E7BA00502E69 /* PBXTargetDependency */,
 			);
 			name = "Priorbank Reports";
 			productName = "Priorbank Reports";
 			productReference = FE15FD2419367334000CBB71 /* Priorbank Reports.app */;
 			productType = "com.apple.product-type.application";
+		};
+		FEBAE5441961E7B900502E69 /* PBRViewElements */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEBAE55E1961E7BA00502E69 /* Build configuration list for PBXNativeTarget "PBRViewElements" */;
+			buildPhases = (
+				FEBAE5401961E7B900502E69 /* Sources */,
+				FEBAE5411961E7B900502E69 /* Frameworks */,
+				FEBAE5421961E7B900502E69 /* Headers */,
+				FEBAE5431961E7B900502E69 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PBRViewElements;
+			productName = PBRViewElements;
+			productReference = FEBAE5451961E7B900502E69 /* PBRViewElements.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FEBAE54E1961E7BA00502E69 /* PBRViewElementsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEBAE5621961E7BA00502E69 /* Build configuration list for PBXNativeTarget "PBRViewElementsTests" */;
+			buildPhases = (
+				FEBAE54B1961E7BA00502E69 /* Sources */,
+				FEBAE54C1961E7BA00502E69 /* Frameworks */,
+				FEBAE54D1961E7BA00502E69 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FEBAE5521961E7BA00502E69 /* PBXTargetDependency */,
+				FEBAE5661961E7BB00502E69 /* PBXTargetDependency */,
+				FEBAE5681961E7BB00502E69 /* PBXTargetDependency */,
+				FEBAE56A1961E7BC00502E69 /* PBXTargetDependency */,
+				FE5363FC1961EBE4000A4D6B /* PBXTargetDependency */,
+				FE5363FE1961EBE4000A4D6B /* PBXTargetDependency */,
+			);
+			name = PBRViewElementsTests;
+			productName = PBRViewElementsTests;
+			productReference = FEBAE54F1961E7BA00502E69 /* PBRViewElementsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -307,6 +533,15 @@
 				CLASSPREFIX = PBR;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Roman Gardukevich";
+				TargetAttributes = {
+					FEBAE5441961E7B900502E69 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					FEBAE54E1961E7BA00502E69 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = FEBAE5441961E7B900502E69;
+					};
+				};
 			};
 			buildConfigurationList = FE15FD1F19367334000CBB71 /* Build configuration list for PBXProject "Priorbank Reports" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -322,6 +557,8 @@
 			projectRoot = "";
 			targets = (
 				FE15FD2319367334000CBB71 /* Priorbank Reports */,
+				FEBAE5441961E7B900502E69 /* PBRViewElements */,
+				FEBAE54E1961E7BA00502E69 /* PBRViewElementsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -334,6 +571,20 @@
 				FE15FD4019367334000CBB71 /* Images.xcassets in Resources */,
 				FE15FD3219367334000CBB71 /* InfoPlist.strings in Resources */,
 				FE15FD3B19367334000CBB71 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEBAE5431961E7B900502E69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEBAE54D1961E7BA00502E69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,12 +640,14 @@
 				FE24EECC19392A8300BD6125 /* RGCardsList.m in Sources */,
 				FE24EEC51938520500BD6125 /* NSDictionary+NormalizeCyrillic.m in Sources */,
 				FE15FD6F19367BEA000CBB71 /* RGNetworkManager.m in Sources */,
+				FE0E6DD21961DF4000BC2FA5 /* PBRBehaviour.m in Sources */,
 				FEDC89F4194E32D70084CD3E /* RGNavigationController.m in Sources */,
 				FE24EEC219384FE900BD6125 /* XMLReader.m in Sources */,
 				FE01F006194F88780036CB31 /* RGTransactionCell.m in Sources */,
 				FE51C6FE193B3F28005DE552 /* RGTransaction.m in Sources */,
 				FE24EEC9193920D600BD6125 /* RGAuthorization.m in Sources */,
 				FE15FD7319367C11000CBB71 /* RGLoginViewController.m in Sources */,
+				FE0E6DD51961DF8300BC2FA5 /* PBRBlurBehaviour.m in Sources */,
 				A0B41B28F6637E7C2859A2E5 /* RXMLElement+ExtendedXMLElement.m in Sources */,
 				A0B41DB108D32BA0D5D00B65 /* RGObject.m in Sources */,
 				A0B41F8E280C2836E831206F /* RGError.m in Sources */,
@@ -402,7 +655,66 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FEBAE5401961E7B900502E69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEBAE5721961E85E00502E69 /* PBRBlurredImageView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEBAE54B1961E7BA00502E69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEBAE5571961E7BA00502E69 /* PBRViewElementsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FE5363FC1961EBE4000A4D6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEBAE5441961E7B900502E69 /* PBRViewElements */;
+			targetProxy = FE5363FB1961EBE4000A4D6B /* PBXContainerItemProxy */;
+		};
+		FE5363FE1961EBE4000A4D6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEBAE5441961E7B900502E69 /* PBRViewElements */;
+			targetProxy = FE5363FD1961EBE4000A4D6B /* PBXContainerItemProxy */;
+		};
+		FEBAE5521961E7BA00502E69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEBAE5441961E7B900502E69 /* PBRViewElements */;
+			targetProxy = FEBAE5511961E7BA00502E69 /* PBXContainerItemProxy */;
+		};
+		FEBAE5591961E7BA00502E69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEBAE5441961E7B900502E69 /* PBRViewElements */;
+			targetProxy = FEBAE5581961E7BA00502E69 /* PBXContainerItemProxy */;
+		};
+		FEBAE55D1961E7BA00502E69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEBAE5441961E7B900502E69 /* PBRViewElements */;
+			targetProxy = FEBAE55C1961E7BA00502E69 /* PBXContainerItemProxy */;
+		};
+		FEBAE5661961E7BB00502E69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEBAE5441961E7B900502E69 /* PBRViewElements */;
+			targetProxy = FEBAE5651961E7BB00502E69 /* PBXContainerItemProxy */;
+		};
+		FEBAE5681961E7BB00502E69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEBAE5441961E7B900502E69 /* PBRViewElements */;
+			targetProxy = FEBAE5671961E7BB00502E69 /* PBXContainerItemProxy */;
+		};
+		FEBAE56A1961E7BC00502E69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEBAE5441961E7B900502E69 /* PBRViewElements */;
+			targetProxy = FEBAE5691961E7BC00502E69 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FE15FD3019367334000CBB71 /* InfoPlist.strings */ = {
@@ -504,6 +816,7 @@
 				GCC_PREFIX_HEADER = "Priorbank Reports/Priorbank Reports-Prefix.pch";
 				INFOPLIST_FILE = "Priorbank Reports/Priorbank Reports-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
@@ -523,12 +836,101 @@
 				GCC_PREFIX_HEADER = "Priorbank Reports/Priorbank Reports-Prefix.pch";
 				INFOPLIST_FILE = "Priorbank Reports/Priorbank Reports-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FEBAE55F1961E7BA00502E69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PBRViewElements/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FEBAE5601961E7BA00502E69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = PBRViewElements/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FEBAE5631961E7BA00502E69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PBRViewElementsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FEBAE5641961E7BA00502E69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PBRViewElementsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -549,6 +951,24 @@
 			buildConfigurations = (
 				FE15FD5719367334000CBB71 /* Debug */,
 				FE15FD5819367334000CBB71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEBAE55E1961E7BA00502E69 /* Build configuration list for PBXNativeTarget "PBRViewElements" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEBAE55F1961E7BA00502E69 /* Debug */,
+				FEBAE5601961E7BA00502E69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEBAE5621961E7BA00502E69 /* Build configuration list for PBXNativeTarget "PBRViewElementsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEBAE5631961E7BA00502E69 /* Debug */,
+				FEBAE5641961E7BA00502E69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -31,8 +31,8 @@ static NSString* kPushCardsList = @"OpenCardsList";
 @implementation RGLoginViewController
 
 - (void)initializeControls {
-    self.loginNameTextField.placeholder = @"Login name";
-    self.passwordTextField.placeholder = @"Your login password";
+    self.loginNameTextField.attributedPlaceholder = [[NSAttributedString alloc]initWithString:@"loginname" attributes:@{NSForegroundColorAttributeName:[[UIColor whiteColor] colorWithAlphaComponent:.3],NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Thin" size:10.0]}];
+    self.passwordTextField.attributedPlaceholder = [[NSAttributedString alloc]initWithString:@"password" attributes:@{NSForegroundColorAttributeName:[[UIColor whiteColor] colorWithAlphaComponent:.3],NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Thin" size:10.0]}];
     [self.signInButton setTitle:@"Sign in" forState:UIControlStateNormal];
     
 #ifdef DEBUG
@@ -59,6 +59,10 @@ static NSString* kPushCardsList = @"OpenCardsList";
 
 -(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
     return UIInterfaceOrientationPortrait;
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 #pragma mark -

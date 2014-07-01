@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface RGLoginViewController : UIViewController
+@property (nonatomic,weak) IBOutlet UIImageView* backgroundView;
 
 @end
