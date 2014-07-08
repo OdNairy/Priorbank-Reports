@@ -41,6 +41,7 @@
 		FE5C454E1962F6EF00321477 /* PBRHideKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C454D1962F6EF00321477 /* PBRHideKeyboard.m */; };
 		FE5C45511962F9E800321477 /* PBRNextResponderOnFinish.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C45501962F9E800321477 /* PBRNextResponderOnFinish.m */; };
 		FE5C45571962FD4400321477 /* PBRSimulateButtonPress.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C45561962FD4400321477 /* PBRSimulateButtonPress.m */; };
+		FE5C455A1963016300321477 /* PBRRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C45591963016300321477 /* PBRRootViewController.m */; };
 		FEBAE54A1961E7B900502E69 /* PBRViewElements.h in Headers */ = {isa = PBXBuildFile; fileRef = FEBAE5491961E7B900502E69 /* PBRViewElements.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FEBAE5501961E7BA00502E69 /* PBRViewElements.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBAE5451961E7B900502E69 /* PBRViewElements.framework */; };
 		FEBAE5571961E7BA00502E69 /* PBRViewElementsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBAE5561961E7BA00502E69 /* PBRViewElementsTests.m */; };
@@ -192,6 +193,8 @@
 		FE5C45501962F9E800321477 /* PBRNextResponderOnFinish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBRNextResponderOnFinish.m; path = Behaviours/PBRNextResponderOnFinish.m; sourceTree = "<group>"; };
 		FE5C45551962FD4400321477 /* PBRSimulateButtonPress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBRSimulateButtonPress.h; path = Behaviours/PBRSimulateButtonPress.h; sourceTree = "<group>"; };
 		FE5C45561962FD4400321477 /* PBRSimulateButtonPress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBRSimulateButtonPress.m; path = Behaviours/PBRSimulateButtonPress.m; sourceTree = "<group>"; };
+		FE5C45581963016300321477 /* PBRRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBRRootViewController.h; sourceTree = "<group>"; };
+		FE5C45591963016300321477 /* PBRRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBRRootViewController.m; sourceTree = "<group>"; };
 		FEBAE5451961E7B900502E69 /* PBRViewElements.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PBRViewElements.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEBAE5481961E7B900502E69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEBAE5491961E7B900502E69 /* PBRViewElements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBRViewElements.h; sourceTree = "<group>"; };
@@ -343,6 +346,8 @@
 				FE24EED41939AA0500BD6125 /* RGCardsListController.m */,
 				FE368748193B4A87009D4B55 /* RGCardTransactionsController.h */,
 				FE368749193B4A87009D4B55 /* RGCardTransactionsController.m */,
+				FE5C45581963016300321477 /* PBRRootViewController.h */,
+				FE5C45591963016300321477 /* PBRRootViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -676,6 +681,7 @@
 				A0B41DB108D32BA0D5D00B65 /* RGObject.m in Sources */,
 				A0B41F8E280C2836E831206F /* RGError.m in Sources */,
 				A0B411A0C9F9ADD90DFE9552 /* RGCommission.m in Sources */,
+				FE5C455A1963016300321477 /* PBRRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

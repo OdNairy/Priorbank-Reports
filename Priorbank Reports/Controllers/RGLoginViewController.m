@@ -113,7 +113,7 @@ static NSString* kPushCardsList = @"OpenCardsList";
         return [Promise promiseWithValue:_cardsList];
     }).then(^(){
         [weakSelf performSegueWithIdentifier:kPushCardsList sender:weakSelf];
-        myself.passwordTextField.text = nil;
+//        myself.passwordTextField.text = nil;
     }).finally(^{
         hud.taskInProgress = NO;
         [hud hide:YES];

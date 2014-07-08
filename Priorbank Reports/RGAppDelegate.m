@@ -28,6 +28,8 @@
 //    }).then(^(NSData* d){
 //        return [NSError errorWithDomain:@"blabla" code:3 userInfo:nil];
 //    });
+    self.rootViewController = (PBRRootViewController*)self.window.rootViewController;
+    NSLog(@"controller: %@",self.window.rootViewController);
     return YES;
 }
 							

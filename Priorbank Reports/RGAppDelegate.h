@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PBRRootViewController.h"
 
 @interface RGAppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong) UIWindow *window;
+@property (nonatomic, strong) PBRRootViewController* rootViewController;
 
 @end
